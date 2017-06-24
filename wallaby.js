@@ -17,7 +17,6 @@ module.exports = function (wallaby) {
       loaders: [
         {test: /\.css$/, loader: 'raw-loader'},
         {test: /\.html$/, loader: 'raw-loader'},
-        {test: /\.ts$/, loader: '@ngtools/webpack', include: /node_modules/, query: {tsConfigPath: 'tsconfig.json'}},
         {test: /\.js$/, loader: 'angular2-template-loader', exclude: /node_modules/},
         {test: /\.json$/, loader: 'json-loader'},
         {test: /\.styl$/, loaders: ['raw-loader', 'stylus-loader']},
@@ -28,7 +27,6 @@ module.exports = function (wallaby) {
     },
 
     resolve: {
-      extensions: ['.js', '.ts'],
       modules: [
         path.join(wallaby.projectCacheDir, 'src/app'),
         path.join(wallaby.projectCacheDir, 'src')
@@ -38,6 +36,7 @@ module.exports = function (wallaby) {
 
   return {
     files: [
+      {pattern: 'src/_testing/*.ts', instrument: true, load: false, ignore: false },
       {pattern: 'src/main.ts', instrument: false, load: true, ignore: true },
       {pattern: 'src/test.ts', instrument: false, load: true, ignore: true },
       {pattern: 'src/**/*.ts', load: false},
@@ -50,6 +49,7 @@ module.exports = function (wallaby) {
       {pattern: 'src/**/*.html', load: false},
       {pattern: 'src/**/*.json', load: false},
       {pattern: 'src/**/*spec.ts', ignore: true}
+
     ],
 
     tests: [
@@ -69,7 +69,12 @@ module.exports = function (wallaby) {
     },
 
     env: {
-      kind: 'electron'
+      kind: 'electron',
+      options: {
+        webPreferences: {
+          nodeIntegration: true
+        }
+      }
     },
 
     postprocessor: webpackPostprocessor,
@@ -78,6 +83,7 @@ module.exports = function (wallaby) {
       window.__moduleBundler.loadTests();
     },
 
+    filesWithNoCoverageCalculated: ['src/_testing/**/*'],
     debug: true
   };
 };

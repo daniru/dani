@@ -15,4 +15,5 @@ import {
 
 getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
-  platf
+  platformBrowserDynamicTesting()
+);
