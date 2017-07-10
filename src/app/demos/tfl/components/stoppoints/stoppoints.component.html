@@ -1,0 +1,6 @@
+<h1> Rute 24 Stops </h1>
+<dr-gmaps [lat]="lat" [lng]="lng" [markers]="markers"></dr-gmaps>
+({{lat}}, {{lng}})
+<section *ngFor="let stop of data">
+  {{stop.commonName}}
+</section>

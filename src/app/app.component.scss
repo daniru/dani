@@ -1,0 +1,10 @@
+.page {
+    display: flex;
+    .content {
+        flex: 80;
+    }
+    .column {
+        flex: 20;
+        padding: 0 0 0 10px;
+    }
+}

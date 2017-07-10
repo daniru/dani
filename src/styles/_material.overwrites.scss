@@ -23,9 +23,9 @@ $mat-daniru: (
     200: $black-87-opacity,
     300: $black-87-opacity,
     400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
     800: $white-87-opacity,
     900: $white-87-opacity,
     A100: $black-87-opacity,
@@ -35,19 +35,19 @@ $mat-daniru: (
   )
 );
 
-$app-primary: mat-palette($mat-daniru, 500);
-$app-accent:  mat-palette($mat-blue, 100, A100, A400);
+$dr-primary: mat-palette($mat-daniru, 500);
+$dr-accent:  mat-palette($mat-grey, 100, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$app-warn:  mat-palette($mat-red);
+$dr-warn:  mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$dr-theme: mat-light-theme($dr-primary, $dr-accent, $dr-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($app-theme);
+@include angular-material-theme($dr-theme);
 
 snack-bar-container {
   background: #DD4B39 !important;
