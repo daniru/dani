@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { MdListModule, MdIconModule } from '@angular/material';
-
+import { MdListModule, MdIconModule, MdGridListModule } from '@angular/material';
 import { TflRoutingModule } from './tfl-routing.module';
 import { SharedModule } from './../../shared/shared.module';
 
@@ -18,7 +17,8 @@ import { StoppointsComponent } from './components/stoppoints/stoppoints.componen
     TflRoutingModule,
     SharedModule,
     MdListModule,
-    MdIconModule
+    MdIconModule,
+    MdGridListModule
   ],
   declarations: [TflComponent, StatusComponent, StoppointsComponent],
   providers: [ TflService ]

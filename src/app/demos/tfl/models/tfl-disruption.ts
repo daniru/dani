@@ -9,3 +9,4 @@ export class TflDisruptions {
     isBlocking: boolean;
     closureText: string;
 }
+
