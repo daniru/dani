@@ -1,4 +1,4 @@
-export class TflSegment {
+export class TflStreetSegment {
     $type: string;
     toid: string;
     lineString: string;

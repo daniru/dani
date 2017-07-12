@@ -1,4 +1,4 @@
-export class TflRoad {
+export class TflRoadCorridor {
     $type: string;
     id: string;
     displayName: string;
@@ -6,5 +6,7 @@ export class TflRoad {
     statusSeverityDescription: string;
     bounds: string;
     envelope: string;
+    statusAggregationStartDate?: string;
+    statusAggregationEndDate?: string;
     url: string;
 }

@@ -1,11 +1,11 @@
-import { TflSegment } from './tfl-segment';
+import { TflStreetSegment } from './tfl-street-segment';
 
 export class TflStreet {
     $type: string;
     name: string;
     closure: string;
     directions: string;
-    segments: TflSegment[];
+    segments: TflStreetSegment[];
     sourceSystemId: number;
     sourceSystemKey: string;
 }

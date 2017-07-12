@@ -1,6 +1,6 @@
 import { TflAdditionalProperty } from './tfl-additional-property';
 
-export class TflBikePoint {
+export class TflPlace {
     $type: string;
     id: string;
     url: string;
