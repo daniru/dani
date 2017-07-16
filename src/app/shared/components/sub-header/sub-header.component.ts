@@ -18,16 +18,20 @@ export class SubHeaderComponent implements OnInit {
   ngOnInit() {
     const path: string[] = [];
     this.sections = [];
-    _.each(this._activatedRoute.pathFromRoot, (p: ActivatedRoute) => {
+    _.forEach(this._activatedRoute.pathFromRoot, (p: ActivatedRoute, i: number) => {
       if (p.routeConfig && p.routeConfig.path !== '') {
         path.push(p.routeConfig.path);
-        this.sections.push({ title: p.routeConfig.data && p.routeConfig.data.title ? p.routeConfig.data.title : p.routeConfig.path, link: [...path] });
+        this.sections.push({
+          title: p.routeConfig.data && p.routeConfig.data.title ? p.routeConfig.data.title : p.routeConfig.path,
+          link: [...path]
+        });
       } else {
         path.push('/');
       }
-      console.log(p.routeConfig);
     });
-    console.log(this._activatedRoute);
+    if (this.sections && this.sections.length > 1) {
+      _.last(this.sections).link = null;
+    }
   }
 
 }

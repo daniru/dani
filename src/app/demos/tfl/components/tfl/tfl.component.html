@@ -1,11 +1,2 @@
-<dr-sub-header title="Demos"></dr-sub-header>
-<md-grid-list cols="4" rowHeight="100px">
-  <md-grid-tile
-      *ngFor="let tile of demos"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [routerLink]="tile.link"
-      [style.background]="tile.color">
-    {{tile.text}}
-  </md-grid-tile>
-</md-grid-list>
+<router-outlet></router-outlet>
+<dr-footer></dr-footer>

@@ -13,6 +13,9 @@ import { DemosComponent } from './components/demos/demos.component';
     MdGridListModule,
     SharedModule
   ],
-  declarations: [DemosComponent]
+  declarations: [
+    DemosComponent
+  ],
+  bootstrap: [ DemosComponent ]
 })
 export class DemosModule { }

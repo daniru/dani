@@ -1,9 +1,14 @@
 .page {
     display: flex;
+    min-height: calc(100% - 64px);
     .content {
         flex: 80;
+        position: relative;
     }
     .column {
+        // background-color: #c1ccda;
+        // box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+        color: #0f2540;
         flex: 20;
         padding: 0 0 0 10px;
     }

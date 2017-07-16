@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { TflStatus } from './../../models/tfl-status';
-import { TflService } from './../../services/tfl.service';
+import { TflLine, TflMode } from '../../services/models/index';
+import { TflService } from '../../services/tfl.service';
 
 @Component({
   selector: 'dr-status',
@@ -11,18 +11,24 @@ import { TflService } from './../../services/tfl.service';
 })
 export class StatusComponent implements OnInit {
 
-  stream: Observable<TflStatus[]>
+  stream: Observable<TflLine[]>
+
+  modesTube = [ TflMode.tube, TflMode.overground, TflMode.dlr, TflMode.tflrail ];
+  modesTrain = [ TflMode.nationalRail ];
+  modesRiver = [ TflMode.riverBus, TflMode.riverTour ];
+  modesBus = [ TflMode.bus];
+  modesOthers = [ TflMode.cableCar, TflMode.coach, TflMode.cycle, TflMode.cycleHire, TflMode.interchangeKeepSitting,
+    TflMode.interchangeSecure, TflMode.replacementBus, TflMode.taxi, TflMode.tram, TflMode.walking ];
 
   constructor(private _tflService: TflService) { }
 
   ngOnInit() {
-    this.stream = this._tflService.getAllStatus()
-      .map((statuses: TflStatus[]) => {
-        console.log(statuses);
-        return _.sortBy(statuses, (s: any) => {
-          return s.lineStatuses[0].statusSeverity === 10 ? 100 : s.lineStatuses[0].statusSeverity;
-        });
-      });
+    // this.stream = this._tflService.getAllStatus()
+    //   .map((statuses: TflLine[]) => {
+    //     return _.sortBy(statuses, (s: any) => {
+    //       return s.lineStatuses[0].statusSeverity === 10 ? 100 : s.lineStatuses[0].statusSeverity;
+    //     });
+    //   });
   }
 
 }

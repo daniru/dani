@@ -1,28 +1,21 @@
-<dr-sub-header title="Demos > Transport For London Demo > Current Status"></dr-sub-header>
+<dr-sub-header></dr-sub-header>
 <section class="content">
-  <md-list>
-    <!-- <h3 md-subheader>Folders</h3> -->
-    <md-list-item *ngFor="let status of stream | async">
-        <h4 [class]="status.id"><div>{{status.name}}</div></h4>
-        <content class="statuswrapper">
-          <content class="status"  *ngFor="let linestatus of status.lineStatuses">
-            <div [class]="'statusdetail status' + linestatus.statusSeverity"> {{linestatus.statusSeverityDescription}}</div>
-            <div class="reason">
-              {{linestatus.reason}}
-              <span class="additional" *ngIf="linestatus.disruption">{{linestatus.disruption.additionalInfo}}</span>
-            </div>
-          </content>
-        </content>
-        <!-- <div *ngIf="status.lineStatuses[0].statusSeverity != 10 && status.lineStatuses[0].statusSeverity != 20 && status.lineStatuses[0].statusSeverity != 3">
-          {{status.lineStatuses[0] | json}}
-        </div> -->
-        <!-- <div *ngIf="linestatus.statusSeverity != 10">
-          
-        </div> -->
-    </md-list-item>
-  </md-list>
+  <md-tab-group>
+    <md-tab label="Tube and Train">
+      <dr-status-panel [modes]="modesTube"></dr-status-panel>
+    </md-tab>
+    <md-tab label="Bus">
+      <dr-status-panel [modes]="modesBus"></dr-status-panel>
+    </md-tab>
+    <md-tab label="National Train">
+      <dr-status-panel [modes]="modesTrain"></dr-status-panel>
+    </md-tab>
+    <md-tab label="River Services">
+      <dr-status-panel [modes]="modesRiver"></dr-status-panel>
+    </md-tab>
+    <md-tab label="Cable Car, Tram & Others Serices">
+      <dr-status-panel [modes]="modesOthers"></dr-status-panel>
+    </md-tab>
+  </md-tab-group>
 <section>
-<!-- <section *ngFor="">
-  {{}}
-  {{status | json}}
-</section> -->
+

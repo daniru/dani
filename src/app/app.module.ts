@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, MD_PLACEHOLDER_GLOBAL_OPTIONS } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './shared/shared.module';
@@ -24,7 +24,9 @@ import { environment } from '../environments/environment';
       apiKey: environment.googleMapsApi
     })
   ],
-  providers: [],
+  providers: [
+    {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: { float: 'always' }}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,8 @@
+<dr-sub-header></dr-sub-header>
+<md-select placeholder="Bus Or Tube Line" [(ngModel)]="myState">
+   <md-option *ngFor="let line of lines" [value]="line.code">{{ line.name }}</md-option>
+</md-select>
+<dr-gmaps [lat]="minLat" [lng]="minLon" [markers]="markers" [polygons]="polygons"></dr-gmaps>
+<section *ngFor="let stop of data?.stations">
+  {{stop.name}}
+</section>
