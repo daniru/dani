@@ -1,13 +1,6 @@
 <dr-sub-header></dr-sub-header>
 <section class="content">
-  <md-grid-list cols="4" rowHeight="100px">
-    <md-grid-tile
-        *ngFor="let tile of demos"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [routerLink]="tile.link"
-        [style.background]="tile.color">
-      {{tile.text}}
-    </md-grid-tile>
-  </md-grid-list>
+  <md-list>
+    <md-list-item class="item" *ngFor="let item of list" [routerLink]="item.link">{{item.text}}</md-list-item>
+  </md-list>
 </section>

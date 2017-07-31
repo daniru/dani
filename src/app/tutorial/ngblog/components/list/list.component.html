@@ -1,0 +1,8 @@
+<dr-sub-header></dr-sub-header>
+<h2>Sections</h2>
+<section class="content">
+  <md-spinner></md-spinner>
+  <md-list>
+    <md-list-item class="item" *ngFor="let item of list | async" [routerLink]="item.key">{{item.title}}</md-list-item>
+  </md-list>
+</section>

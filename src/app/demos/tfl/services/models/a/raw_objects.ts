@@ -617,17 +617,17 @@ export class DateRange {
     endDate: string;
 }
 
-export class RouteSearchResponse {
+export class TflRouteSearchResponse {
     input: string;
-    searchMatches: RouteSearchMatch[];
+    searchMatches: TflRouteSearchMatch[];
 }
 
-export class RouteSearchMatch {
+export class TflRouteSearchMatch {
     lineId: string;
     mode: string;
     lineName: string;
-    lineRouteSection: LineRouteSection[];
-    matchedRouteSections: MatchedRouteSections[];
+    lineRouteSection: TflLineRouteSection[];
+    matchedRouteSections: TflMatchedRouteSections[];
     matchedStops: TflMatchedStop[];
     id: string;
     url: string;
@@ -636,7 +636,7 @@ export class RouteSearchMatch {
     lon: number;
 }
 
-export class LineRouteSection {
+export class TflLineRouteSection {
     routeId: number;
     direction: string;
     destination: string;
@@ -646,7 +646,7 @@ export class LineRouteSection {
     vehicleDestinationText: string;
 }
 
-export class MatchedRouteSections {
+export class TflMatchedRouteSections {
     id: number;
 }
 
@@ -786,7 +786,7 @@ export class PlaceCategory {
     availableKeys: string[];
 }
 
-export class SearchResponse {
+export class TflSearchResponse {
     query: string;
     from: number;
     page: number;

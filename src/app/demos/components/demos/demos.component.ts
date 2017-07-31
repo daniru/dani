@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemosComponent implements OnInit {
 
-  demos: any[] = [];
-
-  constructor() {
-  }
+  list: any[] = [];
 
   ngOnInit() {
-    this.demos.push({text: 'Tranport For London', cols: 3, rows: 1, color: 'lightblue', link: ['/', 'demos', 'tfl'] })
+    this.list.push({text: 'Tranport For London', link: ['/', 'demos', 'tfl'] })
   }
 
 }

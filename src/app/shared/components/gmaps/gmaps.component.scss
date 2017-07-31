@@ -5,3 +5,26 @@ agm-map {
     height: 400px;
     width: 800px;
 }
+
+/deep/ {
+    .arrive {
+        display: flex;
+
+
+        .name {
+            font-weight: bold;
+            min-width: 60px;
+        }
+
+        .time {
+            text-align: right;
+            min-width: 50px;
+        }
+    }
+
+    .title {
+        border-bottom: 1px solid #333;
+        font-size: 1.3em;
+        margin-bottom: 5px;
+    }
+}

@@ -1,10 +1,11 @@
+import { TflPrediction } from './models/tfl-prediction';
 import * as _ from 'lodash';
-import { TflLine, TflMode, TflStopPoint, TflDirection, TflRouteSequence
-  // TflRoadCorridor, TflPlace, , TflStopPoint, TflRoadDisruption, TflTimetableResponse, TflFaresSection, TflPrediction
-} from './models/index';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { TflLine, TflMode, TflStopPoint, TflDirection, TflRouteSequence, TflRouteSearchResponse
+  // TflRoadCorridor, TflPlace, , TflStopPoint, TflRoadDisruption, TflTimetableResponse, TflFaresSection, TflPrediction
+} from './models/index';
 
 // https://api-portal.tfl.gov.uk/docs
 
@@ -12,35 +13,54 @@ import { Observable } from 'rxjs/Observable';
 export class TflService {
 
   private _baseUrl = 'https://api.tfl.gov.uk';
+  private _appId = 'fe647817';
+  private _appKey = 'ff0d19ecd0e187bb07d6b7c7ec17fea6';
 
   constructor(private _http: Http) { }
+
+  // SEARCH
+
+  search(txt: string): Observable<TflRouteSearchResponse> {
+    const url = `${this._baseUrl}/line/search/${txt}`;
+    return this._httpCall(url)
+      .map((r: Response, i: number) => <TflRouteSearchResponse>r.json());
+  }
 
   // STATUS
 
   getStatus(modes: TflMode[]): Observable<TflLine[]> {
     const url = `${this._baseUrl}/line/mode/${this._tranformToMode(modes)}/status`;
-    return this._http
-      .get(url)
+    return this._httpCall(url)
       .map((r: Response, i: number) => <TflLine[]>r.json());
+  }
+
+  getArrivals(station: string): Observable<TflPrediction[]> {
+    const url = `${this._baseUrl}/stoppoint/${station}/arrivals`;
+    return this._httpCall(url)
+      .map((r: Response, i: number) => <TflPrediction[]>r.json());
   }
 
   // STATIONS
 
   getBusStopPoints(busNumber: number): Observable<TflStopPoint[]> {
     const url = `https://api.tfl.gov.uk/line/${busNumber}/stoppoints`;
-    return this._http
-      .get(url)
+    return this._httpCall(url)
       .map((r: Response, i: number) => <TflStopPoint[]>r.json());
   }
 
   getRoute(lineId: string, direction: TflDirection): Observable<TflRouteSequence> {
     const url = `https://api.tfl.gov.uk/line/${lineId}/Route/Sequence/${direction}`;
-    return this._http
-      .get(url)
+    return this._httpCall(url)
       .map((r: Response, i: number) => <TflRouteSequence>r.json());
   }
 
   // HELPERS
+
+  private _httpCall(url): Observable<Response> {
+    url = `${url}${url.indexOf('?') === -1 ? '?' : '&'}app_id=${this._appId}&app_key=${this._appKey}`
+    return this._http
+      .get(url)
+  }
 
   private _tranformToMode(models: TflMode[]): string {
     let result = '';

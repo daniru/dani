@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  demos: any[] = [];
-
-  constructor() {
-  }
+  list: any[] = [];
 
   ngOnInit() {
-    this.demos.push({text: 'Current Status', cols: 2, rows: 1, color: 'lightblue', link: ['/', 'demos', 'tfl', 'status'] })
-    this.demos.push({text: 'Stop Points', cols: 2, rows: 1, color: 'lightyellow', link: ['/', 'demos', 'tfl', 'stoppoints'] })
+    this.list.push({text: 'Current Status', link: ['/', 'demos', 'tfl', 'status'] })
+    this.list.push({text: 'Stop Points', link: ['/', 'demos', 'tfl', 'stoppoints'] })
   }
 }

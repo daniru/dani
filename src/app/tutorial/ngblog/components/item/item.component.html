@@ -1,0 +1,12 @@
+<dr-sub-header *ngIf="blog" [title]="blog.title"></dr-sub-header>
+<div class="container" *ngIf="blog">
+  <md-card>
+    <md-card-header>
+       <dr-item-header [blog]="blog"></dr-item-header> 
+    </md-card-header> 
+    <md-card-content>
+        <dr-item-section *ngFor="let section of blog.sections" [section]="section"></dr-item-section>
+        <dr-item-comments></dr-item-comments>
+    </md-card-content>
+  </md-card>
+</div>
