@@ -1,7 +1,7 @@
 import { BlogService } from './services/blog.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdListModule, MdButtonModule } from '@angular/material';
+import { MdListModule, MdButtonModule, MdProgressSpinnerModule, MdCardModule } from '@angular/material';
 
 import { NgblogRoutingModule } from './ngblog-routing.module';
 import { SharedModule } from '../../shared/shared.module';
@@ -19,7 +19,9 @@ import { ItemFilesComponent } from './components/item-files/item-files.component
     NgblogRoutingModule,
     SharedModule,
     MdListModule,
-    MdButtonModule
+    MdButtonModule,
+    MdProgressSpinnerModule,
+    MdCardModule
   ],
   providers: [ BlogService ],
   declarations: [ListComponent, ItemComponent, ItemHeaderComponent, ItemSectionComponent, ItemCommentsComponent, ItemFilesComponent]

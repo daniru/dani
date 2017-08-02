@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Blog } from '../../services/models/blog';
 import { BlogService } from '../../services/blog.service';
+import { SubtitleService } from '../../../../services/subtitle.service';
 
 @Component({
   selector: 'dr-item',
@@ -12,21 +13,23 @@ import { BlogService } from '../../services/blog.service';
 export class ItemComponent implements OnInit, OnDestroy {
 
   public blog: Blog;
-  public editMode: boolean;
   private _blogSubscription: Subscription;
 
-  constructor(public route: ActivatedRoute, public router: Router, public blogService: BlogService) { }
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _blogService: BlogService,
+    private _subtitleService: SubtitleService) { }
 
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
+    this._route.params.forEach((params: Params) => {
       const key = params['key'];
-      console.log('key', key);
-      this._blogSubscription = this.blogService.getBlog(key).subscribe((data: any) => {
-        console.log('data', data);
+      this._blogSubscription = this._blogService.getBlog(key).subscribe((data: any) => {
         if (data) {
           this.blog = data;
+          this._subtitleService.setSubstitle(this.blog.title);
         } else if (data === undefined) {
-          this.router.navigate(['/']);
+          this._router.navigate(['/']);
         }
       });
     });

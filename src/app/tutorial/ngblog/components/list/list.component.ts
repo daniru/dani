@@ -11,13 +11,17 @@ import { Blog } from '../../services/models/blog';
 export class ListComponent implements OnInit {
 
   // list of blogs in the view
-  public list: Observable<Blog[]>;
+  list: Observable<Blog[]>;
+  loading: boolean;
 
   constructor(
     public blogService: BlogService) { }
 
   ngOnInit() {
-    this.list = this.blogService.getBlogs();
+    this.loading = true;
+    this.list = this.blogService
+      .getBlogs()
+      .do(x => this.loading = false);
   }
 
 

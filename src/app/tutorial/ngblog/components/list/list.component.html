@@ -1,7 +1,12 @@
-<dr-sub-header></dr-sub-header>
-<h2>Sections</h2>
 <section class="content">
-  <md-spinner></md-spinner>
+  <div class="summary">
+    This article is a series of post that takes you through the steps of creating your own blog using Angular and TypeScript. 
+    They will cover the core fundamentals of angular at the same time that we are building our data-driven application. 
+    We will be displaying the list of blog post and a post itself, we will be able to edit them using Reactive Forms, 
+    store them in a database (firebase) and navigate among those components. We will be hosting the blog in Github Pages.
+  </div>
+  <h2> Articles </h2>
+  <md-spinner *ngIf="loading">Loading articles from Firebase</md-spinner>
   <md-list>
     <md-list-item class="item" *ngFor="let item of list | async" [routerLink]="item.key">{{item.title}}</md-list-item>
   </md-list>

@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule, MD_PLACEHOLDER_GLOBAL_OPTIONS } from '@angular/material';
@@ -11,6 +10,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './services/auth.service';
+import { SubtitleService } from './services/subtitle.service';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
@@ -33,7 +33,8 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: { float: 'always' }},
-    AuthService
+    AuthService,
+    SubtitleService
   ],
   bootstrap: [AppComponent]
 })

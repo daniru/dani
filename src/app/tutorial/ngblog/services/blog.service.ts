@@ -15,7 +15,7 @@ export class BlogService {
   constructor(public afdb: AngularFireDatabase, public authService: AuthService) {
 
     this._blogSubject = new Subject<Blog[]>();
-   
+
   }
 
   // method to get all blogs

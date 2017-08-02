@@ -1,8 +1,23 @@
+@import '../../../../styles/_colors';
+
 md-toolbar.mat-toolbar {
   // box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
   background: transparent;
   display: flex;
-  // background: linear-gradient(145deg,#6f8db1,transparent);
+  // background: linear-gradient(145deg, $secondary ,transparent);
+  // background: $secondary;
+  // border-bottom: 1px solid #eee;
+  font-size: .9em;
+  //min-height: 32px;
+  min-height: 48px;
+  background: #669ccc; //#427eb3;
+  color: white;
+  /deep/ {
+    .mat-toolbar-row {
+        // height: 32px;
+        height: 48px;
+    }
+  }
 }
 
 div { display: inline; }
