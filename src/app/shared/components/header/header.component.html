@@ -1,7 +1,11 @@
 <md-toolbar color="primary">
-  <div class="logo" [routerLink]="['/']">Daniru's Playground</div>
+  <div class="logo">
+    <div class="name">Daniel Rubio</div>
+    <div class="role">Full Stack Developer</div>
+  </div>
   <div class="spacer"></div>
+  <button md-button [routerLink]="['/']">Home</button>
   <button md-button [routerLink]="['/']">Blog</button>
   <button md-button [routerLink]="['/demos']">Demos</button >
-    <button md-button [routerLink]="['/tutorial']">Tutorials</button >
+  <button md-button [routerLink]="['/tutorial']">Tutorials</button >
 </md-toolbar>
