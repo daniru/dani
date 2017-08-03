@@ -1,11 +1,13 @@
-<md-toolbar color="primary">
-  <div class="logo">
-    <div class="name">Daniel Rubio</div>
-    <div class="role">Full Stack Developer</div>
+<md-toolbar color="primary" [@headerState]="mode">
+  <div class="logo" [@logoState]="mode">
+    <div class="name" [@nameState]="mode">Daniel Rubio</div>
+    <div class="role" [@roleState]="mode">Full Stack Developer</div>
   </div>
   <div class="spacer"></div>
-  <button md-button [routerLink]="['/']">Home</button>
-  <button md-button [routerLink]="['/']">Blog</button>
-  <button md-button [routerLink]="['/demos']">Demos</button >
-  <button md-button [routerLink]="['/tutorial']">Tutorials</button >
+  <div class="buttons" [@buttonsState]="mode">
+    <button md-button [routerLink]="['/']">Home</button>
+    <button md-button [routerLink]="['/']">Blog</button>
+    <button md-button [routerLink]="['/demos']">Demos</button >
+    <button md-button [routerLink]="['/tutorial']">Tutorials</button >
+  </div>
 </md-toolbar>

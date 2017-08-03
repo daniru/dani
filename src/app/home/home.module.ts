@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdCardModule, MdGridListModule } from '@angular/material';
+import { MdCardModule, MdListModule, MdIconModule } from '@angular/material';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -10,7 +10,8 @@ import { HomeComponent } from './components/home/home.component';
     CommonModule,
     HomeRoutingModule,
     MdCardModule,
-    MdGridListModule
+    MdListModule,
+    MdIconModule
   ],
   declarations: [HomeComponent]
 })

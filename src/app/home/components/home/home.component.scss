@@ -1,0 +1,47 @@
+@import  "../../../../styles/_colors";
+
+.content {
+    padding: 20px;
+    width: 100%;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        
+        .item {
+            width: 33%;
+            margin: 3%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            .header {
+                display: flex;
+
+                .title {
+                    border-bottom: 3px solid $color300;
+                    font-family: 'Dosis', sans-serif;
+                    font-size: 1.5em;
+                    padding: 0 10px;
+                }
+            }
+
+            .body {
+                padding: 20px 0;
+            }
+
+            
+        };
+    }
+}
+
+md-card {
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+
+    
+}
