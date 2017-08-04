@@ -6,12 +6,15 @@
 
     .row {
         display: flex;
-        flex-direction: row;
-        position: relative;
+        flex-flow: row;
+        flex-wrap: wrap;
+        width: 100%;
         
-        .item {
-            width: 33%;
-            margin: 3%;
+        .item,
+        .item2 {
+            min-width: 300px;
+            width: 29%;
+            margin: 2%;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -33,6 +36,11 @@
 
             
         };
+
+        .item2 {
+            width: 47%;
+            margin: 2%;
+        }
     }
 }
 
