@@ -49,6 +49,34 @@ $dr-theme: mat-light-theme($dr-primary, $dr-accent, $dr-warn);
 // that you are using.
 @include angular-material-theme($dr-theme);
 
+$custom-typography: mat-typography-config(
+  $font-family: $font-family,
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include mat-base-typography($custom-typography);
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
 snack-bar-container {
   background: #DD4B39 !important;
+}
+
+.mat-menu-content {
+  button {
+    // padding: 5px;
+    i { 
+      opacity: .6;
+      padding: 0 10px 0 0;
+    }
+  }
+}
+
+.mat-card-header {
+  .mat-card-header-text {
+    margin: 0;
+  }
 }

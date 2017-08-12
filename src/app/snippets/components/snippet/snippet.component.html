@@ -1,0 +1,12 @@
+<div class="content">
+  <h1 class="mat-title">
+    {{item.title}}
+    <div class="editbutton">
+      <button md-mini-fab><i class="fa fa-pencil" (click)="editSnippet(item)"></i></button>
+    </div>
+  </h1>
+  <h2 class="mat-body-1">{{item.description}}</h2>
+  <div class="code">
+    <pre class="prettyprint prettyprinted" [innerHTML]="item.code | prettyfile:item.extension"></pre>
+  </div>
+</div>

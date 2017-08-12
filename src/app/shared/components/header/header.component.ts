@@ -35,38 +35,38 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
     trigger('logoState', [
       state('small', style({ flexDirection: 'row' })),
       state('big', style({  flexDirection: 'column' })),
-      transition('big => small', animate(1500, keyframes([ 
-        style({ flexDirection: 'column' }), 
-        style({ flexDirection: 'row' }), 
+      transition('big => small', animate(1500, keyframes([
+        style({ flexDirection: 'column' }),
         style({ flexDirection: 'row' }),
+        style({ flexDirection: 'row' })
       ]))),
-      transition('small => big', animate(1500, keyframes([ 
-        style({ flexDirection: 'row' }), 
-        style({ flexDirection: 'row' }), 
+      transition('small => big', animate(1500, keyframes([
+        style({ flexDirection: 'row' }),
+        style({ flexDirection: 'row' }),
         style({ flexDirection: 'column' })
       ]))),
     ]),
 
     trigger('roleState', [
-      state('small', style({ fontSize: '0.6em', padding: '5px 0 0 10px' })),
+      state('small', style({ fontSize: '0.6em', padding: '2px 0px 0px 17px' })),
       state('big',   style({ fontSize: '1em' })),
-      transition('void => big', animate(1500, keyframes([ 
+      transition('void => big', animate(1500, keyframes([
         style({ opacity: 0, fontSize: '0' }),
         style({ opacity: 1, fontSize: '1em' }),
       ]))),
-      transition('void => small', animate(1500, keyframes([ 
+      transition('void => small', animate(1500, keyframes([
         style({ opacity: 0, fontSize: '0' }),
-        style({ opacity: 1, fontSize: '0.6em', padding: '5px 0 0 10px' }),
+        style({ opacity: 1, fontSize: '0.6em', padding: '2px 0px 0px 17px' }),
       ]))),
-      transition('big => small', animate(1500, keyframes([ 
+      transition('big => small', animate(1500, keyframes([
         style({ opacity: 1, fontSize: '1em' }),
         style({ opacity: .1, fontSize: '0' }),
         style({ opacity: .1, fontSize: '0' }),
         style({ opacity: .1, fontSize: '0' }),
-        style({ opacity: 1, fontSize: '0.6em', padding: '5px 0 0 10px' }),
+        style({ opacity: 1, fontSize: '0.6em', padding: '2px 0px 0px 17px' }),
       ]))),
-      transition('small => big', animate(1500, keyframes([ 
-        style({ opacity: 1, fontSize: '0.6em', padding: '5px 0 0 10px' }),
+      transition('small => big', animate(1500, keyframes([
+        style({ opacity: 1, fontSize: '0.6em', padding: '2px 0px 0px 17px' }),
         style({ opacity: .1, fontSize: '0' }),
         style({ opacity: .1, fontSize: '0' }),
         style({ opacity: .1, fontSize: '0' }),
@@ -77,14 +77,14 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
     trigger('buttonsState', [
       state('small', style({ flexDirection: 'row' })),
       state('big', style({  flexDirection: 'column' })),
-      transition('big => small', animate(1500, keyframes([ 
-        style({ flexDirection: 'column', transform: 'translateX(0)' }), 
-        style({ flexDirection: 'column', transform: 'translateX(200%)' }), 
+      transition('big => small', animate(1500, keyframes([
+        style({ flexDirection: 'column', transform: 'translateX(0)' }),
+        style({ flexDirection: 'column', transform: 'translateX(200%)' }),
         style({ flexDirection: 'row', transform: 'translateX(0)' }),
       ]))),
-      transition('small => big', animate(1500, keyframes([ 
-        style({ flexDirection: 'row', transform: 'translateX(0)' }), 
-        style({ flexDirection: 'row', transform: 'translateX(200%)' }), 
+      transition('small => big', animate(1500, keyframes([
+        style({ flexDirection: 'row', transform: 'translateX(0)' }),
+        style({ flexDirection: 'row', transform: 'translateX(200%)' }),
         style({ flexDirection: 'column', transform: 'translateX(0)' })
       ]))),
     ]),

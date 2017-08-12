@@ -1,0 +1,18 @@
+<section class="container">
+  <h1 class="mat-title">
+    This section contains a random selection of code snippets that I've jotted down because I think they might come in handy. It's basically a scratch pad for code that I don't want to forget.
+  </h1>
+  <section class="content">
+    <section class="languages">
+      <md-list>
+        <md-list-item class="item" *ngFor="let item of languages | async" (click)="selectLanguage(item)" [class.selected]="selected == item">
+          <i class="material-icons">keyboard_arrow_right</i>
+          <div class="name">{{item}}</div>
+        </md-list-item>
+      </md-list>
+    </section>
+    <section class="snippets">
+      <dr-snippet [item]="item" *ngFor="let item of snippets | async" (edit)="editSnippet($event)">{{item.title}}</dr-snippet>
+    </section>
+</section>
+<dr-add-snippet [snippet]="snippetToEdit" (finished)="finishEdit($event)"></dr-add-snippet>

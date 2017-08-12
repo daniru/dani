@@ -1,0 +1,40 @@
+.content {
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    height: 1000%;
+}
+
+.mat-title {
+    padding: 20px 0;
+}
+
+.languages {
+    min-width: 200px;
+}
+
+
+h2 {
+    padding: 20px 10px;
+    margin: 0;
+}
+
+.item {
+    // background: #fff;
+    // border: 1px solid #d3dae2;
+    opacity: .8;
+    min-width: 200px;
+    cursor: pointer;
+    margin-bottom: 1px;
+    &.selected,
+    &:hover { opacity: 1; background: #d3dae2; }
+}
+
+.snippets {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    overflow: hidden;
+}
+

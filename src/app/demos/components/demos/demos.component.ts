@@ -10,7 +10,8 @@ export class DemosComponent implements OnInit {
   list: any[] = [];
 
   ngOnInit() {
-    this.list.push({text: 'Tranport For London', link: ['/', 'demos', 'tfl'] })
+    this.list.push({text: 'Create your own Angular Blog', link: ['/', 'demos', 'ngblog'] });
+    this.list.push({text: 'Tranport For London', link: ['/', 'demos', 'tfl'] });
   }
 
 }

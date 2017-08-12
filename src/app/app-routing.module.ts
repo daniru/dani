@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', loadChildren: 'app/home/home.module#HomeModule' },
-  { path: 'blog', loadChildren: 'app/blog/blog.module#BlogModule' },
+  { path: 'blog', loadChildren: 'app/blog/blog.module#BlogModule', data: { title: 'Blog' }},
   { path: 'demos', loadChildren: 'app/demos/demos.module#DemosModule', data: { title: 'Demos' } },
-  { path: 'tutorial', loadChildren: 'app/tutorial/tutorial.module#TutorialModule', data: { title: 'Tutorials' } }
+  { path: 'snippets', loadChildren: 'app/snippets/snippets.module#SnippetsModule', data: { title: 'Code Snippets' } }
 ];
 
 @NgModule({

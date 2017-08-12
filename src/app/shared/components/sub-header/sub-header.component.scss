@@ -6,12 +6,13 @@ md-toolbar.mat-toolbar {
   display: flex;
   // background: linear-gradient(145deg, $secondary ,transparent);
   // background: $secondary;
-  // border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee;
   font-size: .9em;
   //min-height: 32px;
-  min-height: 48px;
-  background: #669ccc; //#427eb3;
-  color: white;
+  min-height: auto;
+  height: 48px;
+  // background: #669ccc; //#427eb3;
+  // color: white;
   /deep/ {
     .mat-toolbar-row {
         // height: 32px;

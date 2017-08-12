@@ -1,28 +1,42 @@
-import { Subscription } from 'rxjs/Subscription';
-import { SubtitleService } from './../../../services/subtitle.service';
-import { Title } from '@angular/platform-browser';
 import * as _ from 'lodash';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Event, ResolveEnd, ActivatedRouteSnapshot  } from '@angular/router';
-
+import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { Subscription } from 'rxjs/Subscription';
+import { SubtitleService } from './../../../services/subtitle.service';
 @Component({
   selector: 'dr-sub-header',
   templateUrl: './sub-header.component.html',
-  styleUrls: ['./sub-header.component.scss']
+  styleUrls: ['./sub-header.component.scss'],
+  animations: [
+    trigger('subHeaderState', [
+      transition('void => *',
+        animate(1500, keyframes([
+          style({ height: '0px', opacity: '0', border: '0' }),
+          style({ height: '36px', opacity: '1', border: '0' })
+        ]))
+      ),
+      transition('* => void',
+        animate(1500, keyframes([
+          style({ height: '36px', opacity: '1', border: '0' }),
+          style({ height: '0px', opacity: '0', border: '0' })
+        ]))
+      ),
+    ]),
+  ]
 })
 export class SubHeaderComponent implements OnInit, OnDestroy {
 
   @Input() title: string;
 
   sections: any[];
-  
+
   private _subtitleSubcription: Subscription;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _router: Router,
-    private _subtitleService: SubtitleService,
-    private _titleService: Title) { }
+    private _subtitleService: SubtitleService) { }
 
   ngOnInit() {
     this._subtitleSubcription = this._subtitleService.subtitleSubject.subscribe((title: string) => {
