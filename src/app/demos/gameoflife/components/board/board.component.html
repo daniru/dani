@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="boardcontainer">
+    <div class="board">
+      <md-grid-list [cols]="gameService.columns">
+          <md-grid-tile *ngFor="let tile of gameService.board | async" [class.active]="tile"></md-grid-tile>
+      </md-grid-list>
+    </div>
+  </div>
+  <div class="column">
+      <button md-raised-button (click)="gameService.start(null)">Start</button>
+      <button md-raised-button (click)="gameService.start('pentadecathlon')">Start Pentadecathlon </button>
+      <button md-raised-button *ngIf="!gameService.stopped" (click)="gameService.stop()">Stop</button>
+      <button md-raised-button *ngIf="gameService.stopped" (click)="gameService.resume()">Resume</button>
+      <div class="accent">Columns {{gameService.columns}}</div>
+      <md-slider color="primary" min=10 max=50 step=10 [value]="gameService.columns" (change)="onColumnSizeChange($event)"></md-slider>
+      <div class="accent">{{gameService.repetitions}} Iterations</div>
+      <div class="fill"></div>
+  </div>
+</div>

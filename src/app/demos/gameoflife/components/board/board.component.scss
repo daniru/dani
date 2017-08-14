@@ -1,0 +1,42 @@
+@import '../../../../../styles/_colors';
+
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+
+    .column {
+        max-width: 200px;
+        button {
+            width: 90%;
+            margin: 2% 5%;
+        }
+    }
+
+    .boardcontainer {
+        width: 100%;
+
+        margin-top: 10px;
+    }
+
+    .board {
+        margin: 0 auto;
+        max-width: 600px;
+
+        md-grid-tile {
+            background: $color50;
+        }
+
+        .active {
+            background: $color400;
+        }
+    }
+
+    .accent {
+        background: $color50;
+        padding: 10px;
+        margin: 5px;
+        font-size: .9em;
+    }
+}

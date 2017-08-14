@@ -15,3 +15,17 @@ h2 {
     margin-bottom: 1px;
     &:hover { opacity: 1; background: #d3dae2; }
 }
+
+.fill {
+    flex-grow: 2;
+}
+
+.tags {
+    display: flex;
+    i { font-size: 2em; opacity: .7; }
+    .imgwrapper {
+        padding-top: 5px;
+        img { width: 35px; }
+    }
+    
+}

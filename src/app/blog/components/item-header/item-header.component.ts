@@ -49,11 +49,11 @@ export class ItemHeaderComponent implements OnChanges {
       const shareLink = `${this.document.location.href}${this.blog.key}`;
 
       this.socialLinks = [
-        { name: 'Google+',   url: `https://plus.google.com/share?url=${shareLink}`, icon: 'fa fa-google' },
-        { name: 'Facebook',  url: `https://www.facebook.com/sharer.php?u=${shareLink}&amp;t=${shareText}`, icon: 'fa fa-facebook'  },
-        { name: 'Twitter',   url: `https://twitter.com/share?text=${shareText}`, icon: 'fa fa-twitter'   },
-        { name: 'Pinterest', url: `http://pinterest.com/pin/create/button/?url=${shareLink}&amp;description=${shareText}`, icon: 'fa fa-pinterest' },
-        { name: 'Linked In', url: `http://www.linkedin.com/shareArticle?mini=true&amp;url={{shareLink}}&amp;title=${shareText}`, icon: 'fa fa-linkedin'  }
+        { name: 'Google+',   url: `https://plus.google.com/share?url=${shareLink}`, icon: 'mdi mdi-google-plus' },
+        { name: 'Facebook',  url: `https://www.facebook.com/sharer.php?u=${shareLink}&amp;t=${shareText}`, icon: 'mdi mdi-facebook'  },
+        { name: 'Twitter',   url: `https://twitter.com/share?text=${shareText}`, icon: 'mdi mdi-twitter'   },
+        { name: 'Pinterest', url: `http://pinterest.com/pin/create/button/?url=${shareLink}&amp;description=${shareText}`, icon: 'mdi mdi-pinterest' },
+        { name: 'Linked In', url: `http://www.linkedin.com/shareArticle?mini=true&amp;url={{shareLink}}&amp;title=${shareText}`, icon: 'mdi mdi-linkedin'  }
       ];
   }
 
