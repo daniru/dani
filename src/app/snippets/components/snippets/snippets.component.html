@@ -2,11 +2,11 @@
   <h1 class="mat-title">
     This section contains a random selection of code snippets that I've jotted down because I think they might come in handy. It's basically a scratch pad for code that I don't want to forget.
   </h1>
-  <dr-search-box></dr-search-box>
+  <dr-search-box placeholder="Search Snippet" (change)="onChange($event)"></dr-search-box>
   <section class="content">
     <section class="languages">
       <md-list>
-        <md-list-item class="item" *ngFor="let item of languages | async" (click)="selectLanguage(item)" [class.selected]="selected == item">
+        <md-list-item class="item" *ngFor="let item of languages | async" (click)="selectLanguage(item)" [class.selected]="searchTerm.length <= 1 && language == item">
           <i class="material-icons">keyboard_arrow_right</i>
           <div class="name">{{item}}</div>
         </md-list-item>
