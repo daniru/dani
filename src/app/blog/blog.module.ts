@@ -1,5 +1,7 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../shared/shared.module';
-import { MdCardModule, MdIconModule, MdButtonModule, MdMenuModule, MdTooltipModule, MdTabsModule } from '@angular/material';
+import { MdCardModule, MdIconModule, MdButtonModule, MdMenuModule, MdTooltipModule, MdTabsModule, MdInputModule,
+  MdSnackBarModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
@@ -12,6 +14,11 @@ import { ItemSectionComponent } from './components/item-section/item-section.com
 import { ItemFilesComponent } from './components/item-files/item-files.component';
 import { ItemComponent } from './components/item/item.component';
 import { ItemCommentsComponent } from './components/item-comments/item-comments.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
+import { EditItemFileComponent } from './components/edit-item-file/edit-item-file.component';
+import { EditItemSectionComponent } from './components/edit-item-section/edit-item-section.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+
 
 @NgModule({
   imports: [
@@ -22,11 +29,16 @@ import { ItemCommentsComponent } from './components/item-comments/item-comments.
     MdIconModule,
     MdButtonModule,
     MdMenuModule,
+    MdInputModule,
     SharedModule,
     MdTooltipModule,
-    MdTabsModule
+    MdTabsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MdSnackBarModule
   ],
   providers: [ BlogService ],
-  declarations: [ListComponent, ListItemComponent, ItemHeaderComponent, ItemSectionComponent, ItemFilesComponent, ItemComponent, ItemCommentsComponent]
+  declarations: [ListComponent, ListItemComponent, ItemHeaderComponent, ItemSectionComponent, ItemFilesComponent,
+    ItemComponent, ItemCommentsComponent, EditItemComponent, EditItemFileComponent, EditItemSectionComponent, PaginationComponent]
 })
 export class BlogModule { }

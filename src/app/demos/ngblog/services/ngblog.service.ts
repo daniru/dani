@@ -8,7 +8,7 @@ import { AuthService } from '../../../services/auth.service';
 import { Blog } from './models/blog';
 
 @Injectable()
-export class BlogService {
+export class NgblogService {
 
   private _blogSubject: Subject<Blog[]>;
 

@@ -14,6 +14,9 @@ import { PrettyfilePipe } from './pipes/prettyfile.pipe';
 import { MarkdownPipe } from './pipes/markdown.pipe';
 import { ClipboardDirective } from './directives/clipboard.directive';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
+import { OrderByOrderPipe } from './pipes/order-by-order.pipe';
 
 @NgModule({
   imports: [
@@ -27,7 +30,10 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     ReactiveFormsModule,
     MdInputModule
   ],
-  declarations: [HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe, ClipboardDirective, SearchBoxComponent],
-  exports: [HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe, ClipboardDirective, SearchBoxComponent]
+  declarations: [HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
+    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe],
+  exports: [HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
+    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe],
+  entryComponents: [ AuthDialogComponent ]
 })
 export class SharedModule { }

@@ -9,4 +9,8 @@
     </md-card-content>
   </md-card>
 </div>
-<!-- <dr-edit-item [blog]="blog" *ngIf="editMode" (save)="onSave($event)"></dr-edit-item> -->
+<dr-edit-item [blog]="blog" *ngIf="editMode" (save)="onSave($event)"></dr-edit-item>
+
+<section class="edit" *ngIf="!editMode && authService.user?.isAdmin">
+  <a md-fab color="primary" (click)="onEditClick($event)"><md-icon>edit</md-icon></a>
+</section>

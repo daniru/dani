@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Blog } from '../../services/models/blog';
-import { BlogService } from '../../services/blog.service';
+import { NgblogService } from '../../services/ngblog.service';
 import { SubtitleService } from '../../../../services/subtitle.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class ItemComponent implements OnInit, OnDestroy {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private _blogService: BlogService,
+    private _blogService: NgblogService,
     private _subtitleService: SubtitleService) { }
 
   ngOnInit() {

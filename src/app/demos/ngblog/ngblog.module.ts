@@ -1,4 +1,4 @@
-import { BlogService } from './services/blog.service';
+import { NgblogService } from './services/ngblog.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdCardModule, MdIconModule, MdButtonModule, MdMenuModule, MdTooltipModule, MdTabsModule,
@@ -21,7 +21,7 @@ import { ItemFilesComponent } from './components/item-files/item-files.component
     SharedModule,
     MdCardModule, MdIconModule, MdButtonModule, MdMenuModule, MdTooltipModule, MdTabsModule, MdProgressSpinnerModule, MdListModule
   ],
-  providers: [ BlogService ],
+  providers: [ NgblogService ],
   declarations: [ListComponent, ItemComponent, ItemHeaderComponent, ItemSectionComponent, ItemCommentsComponent, ItemFilesComponent]
 })
 export class NgblogModule { }

@@ -1,0 +1,30 @@
+<div class="container" *ngIf="form">
+  <md-card class="row">
+    <form [formGroup]="form">
+      <md-input-container class="full-width">
+        <input mdInput placeholder="Key" formControlName="key" type="text">
+      </md-input-container>
+      <md-input-container class="full-width">
+        <input mdInput placeholder="Title" formControlName="title" type="text">
+      </md-input-container>
+      <md-input-container class="full-width">
+        <input mdInput placeholder="Publish" formControlName="date_published" type="datetime-local">
+      </md-input-container>
+      <div formArrayName="sections">
+        <div *ngFor="let control of (form.controls['sections'].controls | orderByOrder); let i = index;" class="section">
+          <dr-edit-item-section
+            [form]="control"
+            [showSwap]="form.controls['sections'].controls.length > (i + 1)"
+            (moveSwap)="onSwapSection(control.value.order)"
+            (deleteSection)="onDeleteSection(control.value.order)"
+            (addSection)="onAddSection(control.value.order)"
+            (addFile)="onAddFile(control.value.order)">
+          </dr-edit-item-section>
+        </div>
+      </div>
+    </form>
+  </md-card>
+</div>
+<section class="save">
+  <a md-fab color="primary" (click)="onSave($event)" [disabled]="!form.valid"><md-icon>save</md-icon></a>
+</section>

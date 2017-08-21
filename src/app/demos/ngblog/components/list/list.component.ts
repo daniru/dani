@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { BlogService } from '../../services/blog.service';
+import { NgblogService } from '../../services/ngblog.service';
 import { Blog } from '../../services/models/blog';
 
 @Component({
@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    public blogService: BlogService) { }
+    public blogService: NgblogService) { }
 
   ngOnInit() {
     this.loading = true;

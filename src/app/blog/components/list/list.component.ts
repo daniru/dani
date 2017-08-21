@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -17,7 +18,7 @@ export class ListComponent implements OnInit, OnDestroy {
   private _blogSubscription: Subscription;
   private _authSubscription: Subscription;
 
-  constructor(public blogService: BlogService) { }
+  constructor(public blogService: BlogService, public authService: AuthService) { }
 
   ngOnInit() {
     this.list = this.blogService.getBlogs();
