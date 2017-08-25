@@ -11,7 +11,7 @@ export class GameService {
   stopped = false;
   get columns(): number { return this._columns; }
 
-  private _columns = 40;
+  private _columns = 30;
   private _length = 1600;
   private _cells: Array<number>;
   private _subscription: Subscription;

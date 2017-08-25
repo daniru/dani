@@ -67,12 +67,13 @@ export class EditItemComponent implements OnChanges {
   }
 
   private _fillForm() {
-    const blog = this.blog || { $key: null, key: '', tags: [], title: '', date_published: '', sections: [null] };
+    const blog: Blog = this.blog || { $key: null, key: '', tags: [], title: '', date_published: '', github: '', sections: [null] };
     this.form = this.formBuilder.group({
       key: blog.key,
       $key: blog.$key,
       tags: blog.tags,
       title: blog.title,
+      github: blog.github,
       date_published: blog.date_published ? moment(blog.date_published).format('YYYY-MM-DDTMM:ss') : null,
       sections: this.formBuilder.array(this._fillSectionArray(blog.sections))
     });

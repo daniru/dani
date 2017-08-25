@@ -1,9 +1,14 @@
 <div class="container" *ngIf="form">
   <md-card class="row">
     <form [formGroup]="form">
-      <md-input-container class="full-width">
-        <input mdInput placeholder="Key" formControlName="key" type="text">
-      </md-input-container>
+      <div class="row">
+        <md-input-container class="full-width">
+          <input mdInput placeholder="Key" formControlName="key" type="text">
+        </md-input-container>
+        <md-input-container class="full-width">
+            <input mdInput placeholder="Github" formControlName="github" type="text">
+        </md-input-container>
+      </div>
       <md-input-container class="full-width">
         <input mdInput placeholder="Title" formControlName="title" type="text">
       </md-input-container>
