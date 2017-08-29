@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { Snippet } from './../../models/snippet';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -11,7 +12,7 @@ export class SnippetComponent implements OnInit {
   @Input() item: Snippet;
   @Output() edit = new EventEmitter<Snippet>();
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }

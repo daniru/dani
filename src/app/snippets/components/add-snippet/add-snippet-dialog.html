@@ -1,6 +1,6 @@
 <h2 md-dialog-title> Add New Snippet </h2>
 <md-dialog-content class="content" *ngIf="form">
-     <form [formGroup]="form">
+    <form [formGroup]="form">
         <div class="row">
             <md-input-container>
                 <input mdInput formControlName="language" placeholder="Language">
@@ -21,7 +21,6 @@
         <md-input-container>
             <textarea  mdInput formControlName="code" placeholder="Code"></textarea>
         </md-input-container>
-        {{form.value | json}}
     </form> 
 </md-dialog-content>
 <md-dialog-actions>

@@ -10,7 +10,7 @@ import { Component, OnInit, Input, OnChanges, EventEmitter, Output, OnDestroy } 
 export class SearchBoxComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() placeholder: string;
-  @Output() change = new EventEmitter<string>();
+  @Output() textChanged = new EventEmitter<string>();
 
   term = new FormControl();
   private _previousValue: string;
@@ -25,7 +25,7 @@ export class SearchBoxComponent implements OnInit, OnChanges, OnDestroy {
       .distinctUntilChanged()
       .do((data) => {
         if (this._previousValue !== data) {
-          this.change.emit(data);
+          this.textChanged.emit(data);
           this._previousValue = data;
         }
       })

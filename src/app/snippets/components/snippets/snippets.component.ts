@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import * as _ from 'lodash';
 import { Snippet } from './../../models/snippet';
 import { Observable } from 'rxjs/Observable';
@@ -12,40 +13,48 @@ import { Component, OnInit } from '@angular/core';
 export class SnippetsComponent implements OnInit {
 
   languages: Observable<string[]>;
-  snippets: Observable<Snippet>;
-
+  snippets: Observable<Snippet[]>;
   selected: string;
   snippetToEdit: Snippet;
-
   searchTerm = '';
-  language = 'IIS';
+  language = null;
 
-  constructor(private _snippetService: SnippetService) {}
+  private _source: Observable<Snippet[]>;
+
+  constructor(
+    public authService: AuthService,
+    private _snippetService: SnippetService) {}
 
   ngOnInit() {
-    this.languages = this._snippetService
-      .getSnippets()
-      .do(x => console.log('on snippets', x))
-      .map(x => _.uniq(_.map(x, (snippet) => snippet.language)))
-      .do(x => this.selectLanguage('IIS'));
 
-    this.getSnippets();
+    this._source = this._snippetService
+      .getSnippets()
+      .do((snippets: Snippet[]) => {
+        if (this.language === null || !_.some(snippets, (x: Snippet) => x.language === this.language)) {
+          this.language = _.first(_.sortBy(_.map(snippets, (snippet) => snippet.language)));
+        }
+      });
+
+    this.snippets = this._source
+      .map(snippets => {
+        if (this.searchTerm && this.searchTerm.length > 0) {
+          return  _.filter(snippets, (snippet: Snippet) => snippet.language === this.language && snippet.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) >= 0);
+        }
+        return _.filter(snippets, (snippet: Snippet) => snippet.language === this.language);
+      });
+
+    this.languages = this._source
+      .map(snippets => {
+        if (this.searchTerm && this.searchTerm.length > 0) {
+          snippets = _.filter(snippets, (snippet: Snippet) => snippet.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) >= 0);
+        }
+        return _.sortBy(_.uniq(_.map(snippets, (snippet) => snippet.language)))
+      });
   }
 
   selectLanguage(language: string) {
     this.language = language;
-    this.getSnippets();
-  }
-
-  getSnippets() {
-    this.snippets = this._snippetService
-    .getSnippets()
-    .map(snippets => {
-      if (this.searchTerm && this.searchTerm.length > 2) {
-        return  _.filter(snippets, (snippet: Snippet) => snippet.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) >= 0);
-      }
-      return _.filter(snippets, (snippet: Snippet) => snippet.language === this.language);
-    });
+    this._snippetService.refresh();
   }
 
   editSnippet(snippet: Snippet) {
@@ -56,9 +65,9 @@ export class SnippetsComponent implements OnInit {
     this.snippetToEdit = null;
   }
 
-  onChange(text: string) {
+  onChangeFilter(text: string) {
     this.searchTerm = text;
-    this.getSnippets();
+    this._snippetService.refresh();
   }
 
 }

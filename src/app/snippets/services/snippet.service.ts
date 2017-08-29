@@ -57,6 +57,10 @@ export class SnippetService {
       .map(res => res.find(x => x.$key === key));
   }
 
+  // refresh() {
+  //   this._snippetSubject.publishReplay();
+  // }
+
   saveSnippet(snippet: Snippet): Observable<string> {
     const subject = new Subject<string>();
     const key = snippet.$key;
