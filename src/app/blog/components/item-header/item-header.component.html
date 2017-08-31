@@ -5,7 +5,8 @@
   <div class="subheader">
     <h3><i class="fa fa-calendar"></i>{{blog.date_published | date:'dd MMMM y'}}</h3> 
     <div class="fill"></div>
-    <button md-mini-fab class="button github" *ngIf="blog.github" (click)='openWindow(blog.github)'><i class="mdi mdi-github-circle"></i></button>
+    <button md-icon-button class="button github" 
+      mdTooltip="GitHub repository" *ngIf="blog.github" (click)='openWindow(blog.github)'><i class="mdi mdi-github-circle"></i></button>
     <button md-icon-button [mdMenuTriggerFor]="menu" class="menu" mdTooltip="Share" (mouseover)="someMethod()">
       <md-icon>share</md-icon>
     </button>

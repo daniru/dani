@@ -1,4 +1,4 @@
-import { MdButtonModule } from '@angular/material';
+import { MdButtonModule, MdListModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +9,8 @@ import { DaniruComponent } from './components/daniru/daniru.component';
   imports: [
     CommonModule,
     DaniruRoutingModule,
-    MdButtonModule
+    MdButtonModule,
+    MdListModule
   ],
   declarations: [DaniruComponent]
 })
