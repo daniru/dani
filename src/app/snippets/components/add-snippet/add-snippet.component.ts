@@ -1,6 +1,6 @@
 import moment from 'moment-es6';
 import { Component, OnInit, OnChanges, Input, Inject, Output, EventEmitter } from '@angular/core';
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Snippet } from './../../models/snippet';
 import { SnippetService } from './../../services/snippet.service';
@@ -16,7 +16,7 @@ export class AddSnippetComponent implements OnChanges {
   @Output() finished = new EventEmitter();
 
   constructor(
-    public dialog: MdDialog,
+    public dialog: MatDialog,
     private _snippetService: SnippetService) {}
 
   ngOnChanges() {
@@ -66,8 +66,8 @@ export class DialogResultExampleDialogComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    public dialogRef: MdDialogRef<DialogResultExampleDialogComponent>,
-    @Inject(MD_DIALOG_DATA) public data: Snippet,
+    public dialogRef: MatDialogRef<DialogResultExampleDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Snippet,
     private formBuilder: FormBuilder) {}
 
   ngOnInit() {

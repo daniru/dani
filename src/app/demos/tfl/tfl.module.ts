@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MdListModule, MdIconModule, MdGridListModule, MdTabsModule, MdSelectModule, MdTableModule,
-  MdAutocompleteModule, MdInputModule, MdSlideToggleModule, MdCardModule, MdButtonModule } from '@angular/material';
-import { CdkTableModule } from '@angular/cdk/table';
+import { MatListModule, MatIconModule, MatGridListModule, MatTabsModule, MatSelectModule, MatTableModule,
+  MatAutocompleteModule, MatInputModule, MatSlideToggleModule, MatCardModule, MatButtonModule } from '@angular/material';
+//import { CdkTableModule } from '@angular/cdk';
 import { TflRoutingModule } from './tfl-routing.module';
 import { SharedModule } from './../../shared/shared.module';
 
@@ -24,18 +24,18 @@ import { StatusPanelComponent } from './components/status-panel/status-panel.com
     ReactiveFormsModule,
     TflRoutingModule,
     SharedModule,
-    MdListModule,
-    MdIconModule,
-    MdGridListModule,
-    MdTabsModule,
-    MdSelectModule,
-    MdAutocompleteModule,
-    MdInputModule,
-    MdSlideToggleModule,
-    MdCardModule,
-    MdButtonModule,
-    MdTableModule,
-    CdkTableModule
+    MatListModule,
+    MatIconModule,
+    MatGridListModule,
+    MatTabsModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    MatCardModule,
+    MatButtonModule,
+    MatTableModule,
+    //CdkTableModule
   ],
   declarations: [
     TflComponent, StatusComponent, RouteComponent, HomeComponent, StatusPanelComponent,

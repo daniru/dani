@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialogRef, MdSnackBar } from '@angular/material';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -9,7 +9,10 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class AuthDialogComponent {
 
-  constructor(public authService: AuthService, public dialogRef: MdDialogRef<AuthDialogComponent>, public snackBar: MdSnackBar) {}
+  constructor(
+    public authService: AuthService,
+    public dialogRef: MatDialogRef<AuthDialogComponent>,
+    public snackBar: MatSnackBar) {}
 
   login(provider: string) {
     this.authService

@@ -31,7 +31,7 @@ export class SnippetService {
     this._snippetSubject = new Subject<Snippet[]>();
 
     this._afdb.list('/snippet')
-      .do(x => console.log('raw, raw', x))
+      .valueChanges()
       .map((x: Snippet[]) => x )
       .do((x) => { this._localCache = x; })
       .do((x) => this._snippetSubject.next(x))
@@ -74,10 +74,10 @@ export class SnippetService {
       snippet.date_created = moment.utc().format('YYYY-MM-DDTMM:ss');
       this._afdb.list('/snippet').push(snippet)
         .then((x) => { subject.next(null); })
-        .catch((e: Error) => {
-          console.log('e', e);
-          subject.error(e.message);
-        } );
+        // .catch((e: Error) => {
+        //   console.log('e', e);
+        //   subject.error(e.message);
+        // } );
     }
      return subject.asObservable();
   }

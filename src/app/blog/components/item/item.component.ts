@@ -1,4 +1,4 @@
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -23,7 +23,7 @@ export class ItemComponent implements OnInit, OnDestroy {
     public router: Router,
     public blogService: BlogService,
     public authService: AuthService,
-    public snackBar: MdSnackBar,
+    public snackBar: MatSnackBar,
     private _subtitleService: SubtitleService) { }
 
  ngOnInit() {
