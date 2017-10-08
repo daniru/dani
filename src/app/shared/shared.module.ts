@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 import { HttpModule} from '@angular/http';
-import { MdToolbarModule, MdButtonModule, MdInputModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatInputModule } from '@angular/material';
 
 import { HeaderComponent } from './components/header/header.component';
 import { ColumnComponent } from './components/column/column.component';
 import { GmapsComponent } from './components/gmaps/gmaps.component';
-import { AgmCoreModule } from '@agm/core';
+// import { AgmCoreModule } from '@agm/core';
 import { SubHeaderComponent } from './components/sub-header/sub-header.component';
 import { PrettyfilePipe } from './pipes/prettyfile.pipe';
 import { MarkdownPipe } from './pipes/markdown.pipe';
@@ -23,12 +23,12 @@ import { OrderByOrderPipe } from './pipes/order-by-order.pipe';
     CommonModule,
     RouterModule,
     HttpModule,
-    MdToolbarModule,
-    MdButtonModule,
-    AgmCoreModule,
+    MatToolbarModule,
+    MatButtonModule,
+    // AgmCoreModule,
     FormsModule,
     ReactiveFormsModule,
-    MdInputModule
+    MatInputModule
   ],
   declarations: [HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
     ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe],

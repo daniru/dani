@@ -31,6 +31,7 @@ export class BlogService {
     this._blogSubject = new Subject<Blog[]>();
 
     this._afdb.list('/post')
+      .valueChanges()
       .do(x => console.log('raw, raw', x))
       .map((x: Blog[]) => x )
       .do((x) => { this._localCache = x; })
@@ -70,10 +71,10 @@ export class BlogService {
       blog.date_created = moment.utc().format('YYYY-MM-DDTMM:ss');
       this._afdb.list('/post').push(blog)
         .then((x) => { subject.next(null); })
-        .catch((e: Error) => {
-          console.log('e', e);
-          subject.error(e.message);
-        } );
+        // .catch((e: Error) => {
+        //   console.log('e', e);
+        //   subject.error(e.message);
+        // } );
     }
      return subject.asObservable();
   }

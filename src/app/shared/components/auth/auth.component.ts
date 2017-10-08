@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 import { AuthService } from '../../../services/auth.service';
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
@@ -11,7 +11,7 @@ import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
 })
 export class AuthComponent {
 
-  constructor(public authService: AuthService, private _dialog: MdDialog) {}
+  constructor(public authService: AuthService, private _dialog: MatDialog) {}
 
   logout() {
      this.authService.logout();

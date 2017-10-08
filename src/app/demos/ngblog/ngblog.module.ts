@@ -1,8 +1,8 @@
 import { NgblogService } from './services/ngblog.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdCardModule, MdIconModule, MdButtonModule, MdMenuModule, MdTooltipModule, MdTabsModule,
-MdProgressSpinnerModule, MdListModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatButtonModule, MatMenuModule, MatTooltipModule, MatTabsModule,
+MatProgressSpinnerModule, MatListModule } from '@angular/material';
 
 import { NgblogRoutingModule } from './ngblog-routing.module';
 import { SharedModule } from '../../shared/shared.module';
@@ -19,7 +19,7 @@ import { ItemFilesComponent } from './components/item-files/item-files.component
     CommonModule,
     NgblogRoutingModule,
     SharedModule,
-    MdCardModule, MdIconModule, MdButtonModule, MdMenuModule, MdTooltipModule, MdTabsModule, MdProgressSpinnerModule, MdListModule
+    MatCardModule, MatIconModule, MatButtonModule, MatMenuModule, MatTooltipModule, MatTabsModule, MatProgressSpinnerModule, MatListModule
   ],
   providers: [ NgblogService ],
   declarations: [ListComponent, ItemComponent, ItemHeaderComponent, ItemSectionComponent, ItemCommentsComponent, ItemFilesComponent]

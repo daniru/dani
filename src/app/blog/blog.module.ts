@@ -1,7 +1,7 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../shared/shared.module';
-import { MdCardModule, MdIconModule, MdButtonModule, MdMenuModule, MdTooltipModule, MdTabsModule, MdInputModule,
-  MdSnackBarModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatButtonModule, MatMenuModule, MatTooltipModule, MatTabsModule, MatInputModule,
+  MatSnackBarModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
@@ -25,17 +25,17 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     CommonModule,
     HttpModule,
     BlogRoutingModule,
-    MdCardModule,
-    MdIconModule,
-    MdButtonModule,
-    MdMenuModule,
-    MdInputModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatInputModule,
     SharedModule,
-    MdTooltipModule,
-    MdTabsModule,
+    MatTooltipModule,
+    MatTabsModule,
     FormsModule,
     ReactiveFormsModule,
-    MdSnackBarModule
+    MatSnackBarModule
   ],
   providers: [ BlogService ],
   declarations: [ListComponent, ListItemComponent, ItemHeaderComponent, ItemSectionComponent, ItemFilesComponent,

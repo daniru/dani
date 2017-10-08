@@ -1,5 +1,5 @@
 import { GameService } from './services/game.service';
-import { MdCardModule, MdGridListModule, MdButtonModule, MdSliderModule } from '@angular/material';
+import { MatCardModule, MatGridListModule, MatButtonModule, MatSliderModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { BoardComponent } from './components/board/board.component';
   imports: [
     CommonModule,
     GameoflifeRoutingModule,
-    MdCardModule, MdGridListModule, MdButtonModule, MdSliderModule
+    MatCardModule, MatGridListModule, MatButtonModule, MatSliderModule
   ],
   providers: [ GameService ],
   declarations: [GameoflifeComponent, BoardComponent]

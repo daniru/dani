@@ -2,7 +2,7 @@ import { SnippetService } from './services/snippet.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MdListModule, MdButtonModule, MdIconModule, MdTooltipModule, MdDialogModule, MdInputModule } from '@angular/material';
+import { MatListModule, MatButtonModule, MatIconModule, MatTooltipModule, MatDialogModule, MatInputModule } from '@angular/material';
 
 import { SharedModule } from '../shared/shared.module';
 import { SnippetsRoutingModule } from './snippets-routing.module';
@@ -16,13 +16,13 @@ import { AddSnippetComponent, DialogResultExampleDialogComponent } from './compo
     FormsModule,
     ReactiveFormsModule,
     SnippetsRoutingModule,
-    MdListModule,
+    MatListModule,
     SharedModule,
-    MdButtonModule,
-    MdIconModule,
-    MdTooltipModule,
-    MdDialogModule,
-    MdInputModule
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [ SnippetService ],
   entryComponents: [ DialogResultExampleDialogComponent ],

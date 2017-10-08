@@ -1,6 +1,6 @@
 import { Component, OnChanges, Input, Inject, EventEmitter, Output, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-import { MdMenuTrigger } from '@angular/material';
+import { MatMenuTrigger } from '@angular/material';
 import { Blog } from '../../models/blog';
 import { AuthService } from '../../../services/auth.service';
 
@@ -10,7 +10,7 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./item-header.component.scss']
 })
 export class ItemHeaderComponent implements OnChanges {
-  @ViewChild(MdMenuTrigger) trigger: MdMenuTrigger;
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   @Input() blog: Blog;
   @Input() headerLink: boolean;
   @Output() editMode = new EventEmitter();

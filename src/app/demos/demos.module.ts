@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdListModule, MdTooltipModule } from '@angular/material';
+import { MatListModule, MatTooltipModule } from '@angular/material';
 
 import { DemosRoutingModule } from './demos-routing.module';
 import { SharedModule } from '../shared/shared.module';
@@ -10,7 +10,7 @@ import { DemosComponent } from './components/demos/demos.component';
   imports: [
     CommonModule,
     DemosRoutingModule,
-    MdListModule, MdTooltipModule,
+    MatListModule, MatTooltipModule,
     SharedModule
   ],
   declarations: [

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule, MD_PLACEHOLDER_GLOBAL_OPTIONS } from '@angular/material';
-import { AgmCoreModule } from '@agm/core';
+import { MatCommonModule, MAT_PLACEHOLDER_GLOBAL_OPTIONS } from '@angular/material';
+// import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -21,18 +21,18 @@ import { environment } from '../environments/environment';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    MaterialModule,
+    MatCommonModule,
     BrowserAnimationsModule,
     SharedModule,
-    AgmCoreModule.forRoot({
-      apiKey: environment.googleMapsApi
-    }),
+    // AgmCoreModule.forRoot({
+    //   apiKey: environment.googleMapsApi
+    // }),
     AngularFireModule.initializeApp(environment.firebaseConfig), // imports firebase/app needed for everything
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // i
   ],
   providers: [
-    {provide: MD_PLACEHOLDER_GLOBAL_OPTIONS, useValue: { float: 'always' }},
+    {provide: MAT_PLACEHOLDER_GLOBAL_OPTIONS, useValue: { float: 'always' }},
     AuthService,
     SubtitleService
   ],

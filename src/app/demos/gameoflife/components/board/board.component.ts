@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MdSliderChange } from '@angular/material';
+import { MatSliderChange } from '@angular/material';
 import { GameService } from '../../services/game.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class BoardComponent  {
     this.gameService.resume();
   }
 
-  onColumnSizeChange(newsize: MdSliderChange) {
+  onColumnSizeChange(newsize: MatSliderChange) {
     this.gameService.onColumnSizeChange(newsize.value);
   }
 
