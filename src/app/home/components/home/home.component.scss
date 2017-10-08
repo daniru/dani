@@ -64,7 +64,7 @@ mat-expansion-panel {
 
     img {
         display: inline;
-        height: 30px;
+        height: 20px;
     }
 
     .position {
@@ -84,7 +84,8 @@ mat-expansion-panel {
 
     .location {
         flex-grow: 0;
-        width: 15%;
+        padding: 2px 0;
+        width: 20%;
         i {
             font-size: 1.2em;
             padding: 0 5px;
