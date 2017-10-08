@@ -13,7 +13,8 @@
         .item,
         .item2 {
             min-width: 300px;
-            width: 29%;
+            max-width: 900px;
+            // width: 29%;
             margin: 2%;
             position: relative;
             display: flex;
@@ -23,14 +24,16 @@
                 display: flex;
 
                 .title {
-                    border-bottom: 3px solid $color300;
-                    font-family: 'Dosis', sans-serif;
+                    // border-bottom: 3px solid $color300;
+                    background: $color400;
+                    color: white;
+                    // font-family: 'Dosis', sans-serif;
                     font-size: 1.5em;
-                    padding: 0 10px 0 0;
+                    padding: 0 20px 5px 20px;
                 }
             }
 
-            .body {
+            .main {
                 padding: 20px 0;
             }
 

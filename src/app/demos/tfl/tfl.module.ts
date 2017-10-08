@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MdListModule, MdIconModule, MdGridListModule, MdTabsModule, MdSelectModule, MdTableModule,
   MdAutocompleteModule, MdInputModule, MdSlideToggleModule, MdCardModule, MdButtonModule } from '@angular/material';
-import { CdkTableModule } from '@angular/cdk';
+import { CdkTableModule } from '@angular/cdk/table';
 import { TflRoutingModule } from './tfl-routing.module';
 import { SharedModule } from './../../shared/shared.module';
 
