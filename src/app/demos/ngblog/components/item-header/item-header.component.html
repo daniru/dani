@@ -1,15 +1,15 @@
-<md-card-title>
+<mat-card-title>
 
-  <button md-icon-button [mdMenuTriggerFor]="menu" class="menu" mdTooltip="Share" (mouseover)="someMethod()">
-    <md-icon>share</md-icon>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu" matTooltip="Share" (mouseover)="someMethod()">
+    <mat-icon>share</mat-icon>
   </button>
-  <md-menu #menu="mdMenu">
-    <button md-menu-item *ngFor="let item of socialLinks"
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let item of socialLinks"
       (click)='openWindow(item.url)'>
       <i [class]="item.icon"></i>
       <span target="social">{{item.name}}</span>
     </button>
-  </md-menu>
+  </mat-menu>
 
   <div class="header">
     <div class="title" ><span [routerLink]="blog.key">{{blog.title}}</span></div>
@@ -17,4 +17,4 @@
 
   <h3><i class="fa fa-calendar"></i>{{blog.date_published | date:'dd MMMM y'}}</h3> 
 
-</md-card-title>
+</mat-card-title>

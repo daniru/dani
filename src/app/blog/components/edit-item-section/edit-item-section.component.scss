@@ -1,9 +1,9 @@
 @import "../../../../styles/colors";
 
-md-toolbar {
+mat-toolbar {
   min-height: auto;
   padding: 3px;
-  /deep/ md-toolbar-row { height: auto; }
+  /deep/ mat-toolbar-row { height: auto; }
 }
 
 .form {

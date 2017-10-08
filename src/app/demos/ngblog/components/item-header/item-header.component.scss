@@ -6,7 +6,7 @@
 
 
 
-md-card-title {
+mat-card-title {
     text-align: center;
     width: 100%;
 
@@ -15,7 +15,7 @@ md-card-title {
         right: 10px;
         top: 10px;
 
-        md-icon {
+        mat-icon {
             opacity: 0.7;
             &:hover {
                 opacity: 1

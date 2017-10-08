@@ -373,7 +373,7 @@
           "order" : 2,
           "path" : "app/shared/"
         }, {
-          "content" : "<md-toolbar color=\"primary\">\n  <div class=\"logo\" routerLink=\"/\">Daniru</div>\n</md-toolbar>\n",
+          "content" : "<mat-toolbar color=\"primary\">\n  <div class=\"logo\" routerLink=\"/\">Daniru</div>\n</mat-toolbar>\n",
           "name" : "header.component.html",
           "order" : 3,
           "path" : "app/shared/components/header/"
@@ -440,12 +440,12 @@
           "order" : 1,
           "path" : "app/blog/components/item-header/"
         }, {
-          "content" : "<md-card-title>\n  <h2 *ngIf=\"blog.header\"  color=\"primary\">{{blog.header}}</h2>\n  <h3>Article By <span>Daniru</span> &#8226; {{blog.date_published | date:'dd MMMM y'}}</h3>\n  <h1 *ngIf=\"!headerLink\">{{blog.title}}</h1>\n  <h1 *ngIf=\"headerLink\"><a [routerLink]=\"blog.key\">{{blog.title}}</a></h1>\n  <h4>\n    <div>\n      <a md-mini-fab color=\"accent\" *ngFor=\"let item of socialLinks\" [href]=\"item.url\" onclick='window.open(this.href,\"popupwindow\", \"width=800,height=500,left=200,top=5,scrollbars,toolbar=0,resizable\"); return false;' target=\"social\">\n        <i [class]=\"item.icon\"></i>\n      </a>\n    </div>\n  </h4>\n</md-card-title>\n",
+          "content" : "<mat-card-title>\n  <h2 *ngIf=\"blog.header\"  color=\"primary\">{{blog.header}}</h2>\n  <h3>Article By <span>Daniru</span> &#8226; {{blog.date_published | date:'dd MMMM y'}}</h3>\n  <h1 *ngIf=\"!headerLink\">{{blog.title}}</h1>\n  <h1 *ngIf=\"headerLink\"><a [routerLink]=\"blog.key\">{{blog.title}}</a></h1>\n  <h4>\n    <div>\n      <a mat-mini-fab color=\"accent\" *ngFor=\"let item of socialLinks\" [href]=\"item.url\" onclick='window.open(this.href,\"popupwindow\", \"width=800,height=500,left=200,top=5,scrollbars,toolbar=0,resizable\"); return false;' target=\"social\">\n        <i [class]=\"item.icon\"></i>\n      </a>\n    </div>\n  </h4>\n</mat-card-title>\n",
           "name" : "item-header.component.html",
           "order" : 2,
           "path" : "app/blog/components/item-header/"
         }, {
-          "content" : "@import \"../../../../styles/_colors\";\n\n:host {\n  width: 100%;\n}\n\nmd-card-title {\n  text-align: center;\n  width: 100%;\n}\n\nh1 {\n  color: black;\n  font-size: 30px;\n  font-weight: normal;\n  margin-bottom: 10px;\n  padding: 0 0 10px;\n  text-transform: capitalize;\n  a {\n    color: $color500;\n    opacity: 1;\n    &:hover { opacity: 0.8;} \n  }\n}\n\nh2 {\n  border-bottom: 3px solid $colorA100;\n  display: inline;\n  font-size: 12px;\n  padding: 20px 5px 0px;\n  font-weight: normal;\n  text-transform: uppercase;\n}\n\nh3 {\n  color: $color400;\n  font-size: 14px;\n  font-weight: normal;\n  margin-bottom: 0px;\n  text-transform: uppercase;\n  opacity: 1;\n  \n}\n\nh4 {\n  display: inline;\n  button,\n  a {\n    font-size: 20px;\n    margin: 0px 5px; \n    opacity: 1;\n    &:hover { opacity: 0.8; }\n  }\n}\n\na {\n  cursor: pointer;\n  padding: 0;\n}\n",
+          "content" : "@import \"../../../../styles/_colors\";\n\n:host {\n  width: 100%;\n}\n\nmat-card-title {\n  text-align: center;\n  width: 100%;\n}\n\nh1 {\n  color: black;\n  font-size: 30px;\n  font-weight: normal;\n  margin-bottom: 10px;\n  padding: 0 0 10px;\n  text-transform: capitalize;\n  a {\n    color: $color500;\n    opacity: 1;\n    &:hover { opacity: 0.8;} \n  }\n}\n\nh2 {\n  border-bottom: 3px solid $colorA100;\n  display: inline;\n  font-size: 12px;\n  padding: 20px 5px 0px;\n  font-weight: normal;\n  text-transform: uppercase;\n}\n\nh3 {\n  color: $color400;\n  font-size: 14px;\n  font-weight: normal;\n  margin-bottom: 0px;\n  text-transform: uppercase;\n  opacity: 1;\n  \n}\n\nh4 {\n  display: inline;\n  button,\n  a {\n    font-size: 20px;\n    margin: 0px 5px; \n    opacity: 1;\n    &:hover { opacity: 0.8; }\n  }\n}\n\na {\n  cursor: pointer;\n  padding: 0;\n}\n",
           "name" : "item-header.component.scss",
           "order" : 3,
           "path" : "app/blog/components/item-header/"
@@ -463,22 +463,22 @@
         "text" : "In the component logic, we have created a public property *headerLinks*. Everytime that any input changes, we check if the required input exists and, we call a method to populate the array with the info to generate the link to the social networks.\n\nAngular provides a way to be able to detect any changes in the **Input()** parameters. We need to implement the **OnChanges** interface and implement the method **ngOnChanges ** that will be called every time any change is detected. {.alert .alert-info}\n\nIn the template we can notice a couple of things: \n\n- We are using another built-in directive, **ngIf**. This is rendering or not the template depending on the condition.\n- To show the date of the post in the template, we are using the built-in pipe [**date**](https://angular.io/docs/ts/latest/api/common/index/DatePipe-pipe.html), to help us to transform the date to our desired format.\n- We are using two new material component, MdCardTitle and MdMiniFab. We will need to import **MdCardModule** and **MdButtonModule** to our blog.module to be able to render those components.\n\n\n\nWe have some built-in pipes in angular. You can read more about them [here](https://angular.io/docs/ts/latest/guide/pipes.html) {.alert .alert-info}\n\n"
       }, {
         "files" : [ {
-          "content" : "<div class=\"container\" *ngIf=\"blog\">\n  <md-card>\n    <md-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"false\"></dr-item-header>\n    </md-card-header> \n    <md-card-content>\n    </md-card-content>\n  </md-card>\n</div>",
+          "content" : "<div class=\"container\" *ngIf=\"blog\">\n  <mat-card>\n    <mat-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"false\"></dr-item-header>\n    </mat-card-header> \n    <mat-card-content>\n    </mat-card-content>\n  </mat-card>\n</div>",
           "name" : "item.component.html",
           "order" : 1,
           "path" : "app/blog/components/item/"
         }, {
-          "content" : "md-card {\n  margin: 10px;\n}\n\nmd-card-header {\n  height: auto;\n}",
+          "content" : "mat-card {\n  margin: 10px;\n}\n\nmat-card-header {\n  height: auto;\n}",
           "name" : "item.component.scss",
           "order" : 2,
           "path" : "app/blog/components/item/"
         }, {
-          "content" : "<div class=\"container\">\n  <md-card>\n    <md-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"true\"></dr-item-header>\n    </md-card-header> \n    <md-card-content>\n    </md-card-content>\n    <md-card-actions>\n      <button md-raised-button color=\"accent\" [routerLink]=\"blog.key\">Read More</button>\n    </md-card-actions>\n  </md-card>\n</div>\n",
+          "content" : "<div class=\"container\">\n  <mat-card>\n    <mat-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"true\"></dr-item-header>\n    </mat-card-header> \n    <mat-card-content>\n    </mat-card-content>\n    <mat-card-actions>\n      <button mat-raised-button color=\"accent\" [routerLink]=\"blog.key\">Read More</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n",
           "name" : "list-item.component.html",
           "order" : 3,
           "path" : "app/blog/components/list-item/"
         }, {
-          "content" : "md-card {\n  margin: 10px;\n}\n\nmd-card-header {\n  height: auto;\n}\n\nmd-card-actions {\n  text-align: center;\n  button {\n    opacity: 1;\n    &:hover { opacity: 0.8; }\n  }\n}",
+          "content" : "mat-card {\n  margin: 10px;\n}\n\nmat-card-header {\n  height: auto;\n}\n\nmat-card-actions {\n  text-align: center;\n  button {\n    opacity: 1;\n    &:hover { opacity: 0.8; }\n  }\n}",
           "name" : "list-item.component.scss",
           "order" : 4,
           "path" : "app/blog/components/list-item/"
@@ -516,12 +516,12 @@
         "text" : "And the code as follows:"
       }, {
         "files" : [ {
-          "content" : "<div class=\"container\" *ngIf=\"blog\">\n  <md-card>\n    <md-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"false\"></dr-item-header>\n    </md-card-header> \n    <md-card-content>\n        <dr-item-section *ngFor=\"let section of blog.sections\" [section]=\"section\"></dr-item-section>\n    </md-card-content>\n  </md-card>\n</div>",
+          "content" : "<div class=\"container\" *ngIf=\"blog\">\n  <mat-card>\n    <mat-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"false\"></dr-item-header>\n    </mat-card-header> \n    <mat-card-content>\n        <dr-item-section *ngFor=\"let section of blog.sections\" [section]=\"section\"></dr-item-section>\n    </mat-card-content>\n  </mat-card>\n</div>",
           "name" : "item.component.html",
           "order" : 1,
           "path" : "app/blog/components/item/"
         }, {
-          "content" : "<div class=\"container\">\n  <md-card>\n    <md-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"true\"></dr-item-header>\n    </md-card-header>\n    <md-card-content>\n      <dr-item-section [section]=\"firstSection\"></dr-item-section>\n    </md-card-content>\n    <md-card-actions>\n      <button md-raised-button color=\"accent\" [routerLink]=\"blog.key\">Read More</button>\n    </md-card-actions>\n  </md-card>\n</div>\n",
+          "content" : "<div class=\"container\">\n  <mat-card>\n    <mat-card-header>\n      <dr-item-header [blog]=\"blog\" [headerLink]=\"true\"></dr-item-header>\n    </mat-card-header>\n    <mat-card-content>\n      <dr-item-section [section]=\"firstSection\"></dr-item-section>\n    </mat-card-content>\n    <mat-card-actions>\n      <button mat-raised-button color=\"accent\" [routerLink]=\"blog.key\">Read More</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n",
           "name" : "list-item.component.html",
           "order" : 2,
           "path" : "app/blog/components/list-item/"
@@ -577,12 +577,12 @@
           "order" : 1,
           "path" : "app/blog/components/item-files/"
         }, {
-          "content" : "<section *ngIf=\"files\">\n  <md-tab-group *ngIf=\"files.length > 1 || (files.length === 1 && files[0].name)\">\n    <md-tab *ngFor=\"let file of files\">\n      <template md-tab-label>\n        <section [class]=\"getClass(file)\" class=\"filesheader\">\n          <div class=\"path\" *ngIf=\"file.path\">{{file.path}}</div>\n          <div class=\"filename\" *ngIf=\"file.name\">{{file.name}}</div>\n        </section>\n      </template>\n      <section>\n        <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"file.content\"></pre>\n      </section>\n    </md-tab>\n  </md-tab-group>\n  <section *ngIf=\"files.length === 1 && ! files[0].name\">\n    <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"files[0].content\"></pre>\n  </section>\n</section>\n",
+          "content" : "<section *ngIf=\"files\">\n  <mat-tab-group *ngIf=\"files.length > 1 || (files.length === 1 && files[0].name)\">\n    <mat-tab *ngFor=\"let file of files\">\n      <template mat-tab-label>\n        <section [class]=\"getClass(file)\" class=\"filesheader\">\n          <div class=\"path\" *ngIf=\"file.path\">{{file.path}}</div>\n          <div class=\"filename\" *ngIf=\"file.name\">{{file.name}}</div>\n        </section>\n      </template>\n      <section>\n        <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"file.content\"></pre>\n      </section>\n    </mat-tab>\n  </mat-tab-group>\n  <section *ngIf=\"files.length === 1 && ! files[0].name\">\n    <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"files[0].content\"></pre>\n  </section>\n</section>\n",
           "name" : "item-files.component.html",
           "order" : 2,
           "path" : "app/blog/components/item-files/"
         }, {
-          "content" : "@import \"../../../../styles/_colors\";\n\nmd-tab-group {\n  background-color: $color50;\n  /deep/ {\n    .path {\n      color: $color700;\n      font-size: 0.7em;\n      position: absolute;\n      width: 100%;\n      text-align: left;\n      top: -12px;\n    }\n\n    .md-tab-label-active { opacity: 1; }\n    .md-tab-header { border-color: $color100; }\n\n    .filename {\n      font-size: 1em;\n      padding-top: 5px;\n    }\n\n    .file {\n\n      &.lang-html {\n        color: $green;\n      }\n      &.lang-ts {\n        color: $blue;;\n      }\n      &.lang-scss {\n        color: $purple;\n      }\n    }\n  }\n}\n\npre {\n  font-size: 80%;\n  margin: 0;\n  overflow: auto;\n  padding: 10px 20px;\n}\n\n",
+          "content" : "@import \"../../../../styles/_colors\";\n\nmat-tab-group {\n  background-color: $color50;\n  /deep/ {\n    .path {\n      color: $color700;\n      font-size: 0.7em;\n      position: absolute;\n      width: 100%;\n      text-align: left;\n      top: -12px;\n    }\n\n    .mat-tab-label-active { opacity: 1; }\n    .mat-tab-header { border-color: $color100; }\n\n    .filename {\n      font-size: 1em;\n      padding-top: 5px;\n    }\n\n    .file {\n\n      &.lang-html {\n        color: $green;\n      }\n      &.lang-ts {\n        color: $blue;;\n      }\n      &.lang-scss {\n        color: $purple;\n      }\n    }\n  }\n}\n\npre {\n  font-size: 80%;\n  margin: 0;\n  overflow: auto;\n  padding: 10px 20px;\n}\n\n",
           "name" : "item-files.component.scss",
           "order" : 3,
           "path" : "app/blog/components/item-files/"
@@ -629,7 +629,7 @@
         "text" : "We need to import the default styles from the *prettify* library and include them in the styles sections inside the angular/CLI configuration file.\n\nIf you want to apply a custom style (as I did with githubv2 style), you can download the file, add it in the styles folder and import it the same way as the prettify CSS file. There are plenty of styles to apply to prettyPrint, you can find a few [here](https://jmblog.github.io/color-themes-for-google-code-prettify/) and [here](https://github.com/daylerees/colour-schemes/tree/master/prettyprint);\n"
       }, {
         "files" : [ {
-          "content" : "<section *ngIf=\"files\">\n  <md-tab-group *ngIf=\"files.length > 1 || (files.length === 1 && files[0].name)\">\n    <md-tab *ngFor=\"let file of files\">\n      <template md-tab-label>\n        <section [class]=\"getClass(file)\" class=\"filesheader\">\n          <div class=\"path\" *ngIf=\"file.path\">{{file.path}}</div>\n          <div class=\"filename\" *ngIf=\"file.name\">{{file.name}}</div>\n        </section>\n      </template>\n      <section>\n        <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"file.content | prettyfile:file.name\"></pre>\n      </section>\n    </md-tab>\n  </md-tab-group>\n  <section *ngIf=\"files.length === 1 && ! files[0].name\">\n    <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"files[0].content | prettyfile:files[0].name\"></pre>\n  </section>\n</section>\n",
+          "content" : "<section *ngIf=\"files\">\n  <mat-tab-group *ngIf=\"files.length > 1 || (files.length === 1 && files[0].name)\">\n    <mat-tab *ngFor=\"let file of files\">\n      <template mat-tab-label>\n        <section [class]=\"getClass(file)\" class=\"filesheader\">\n          <div class=\"path\" *ngIf=\"file.path\">{{file.path}}</div>\n          <div class=\"filename\" *ngIf=\"file.name\">{{file.name}}</div>\n        </section>\n      </template>\n      <section>\n        <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"file.content | prettyfile:file.name\"></pre>\n      </section>\n    </mat-tab>\n  </mat-tab-group>\n  <section *ngIf=\"files.length === 1 && ! files[0].name\">\n    <pre class=\"prettyprint prettyprinted\" [innerHTML]=\"files[0].content | prettyfile:files[0].name\"></pre>\n  </section>\n</section>\n",
           "name" : "item-files.component.html",
           "order" : 1,
           "path" : "app/blog/components/item-files/"
@@ -680,7 +680,7 @@
           "order" : 1,
           "path" : "app/blog/components/pagination/"
         }, {
-          "content" : "<section>\n    <button md-raised-button\n      [disabled]=\"page === 1\"\n      (click)=\"setPage(page - 1)\">Previous</button>\n    <button md-raised-button\n      *ngFor=\"let num of pages\"\n      [class.active]=\"page===num\"\n      (click)=\"page!==num && setPage(num)\">{{num}}</button>\n    <button md-raised-button\n      [disabled]=\"page === pages.length\"\n      (click)=\"setPage(page + 1)\">Next</button>\n</section>",
+          "content" : "<section>\n    <button mat-raised-button\n      [disabled]=\"page === 1\"\n      (click)=\"setPage(page - 1)\">Previous</button>\n    <button mat-raised-button\n      *ngFor=\"let num of pages\"\n      [class.active]=\"page===num\"\n      (click)=\"page!==num && setPage(num)\">{{num}}</button>\n    <button mat-raised-button\n      [disabled]=\"page === pages.length\"\n      (click)=\"setPage(page + 1)\">Next</button>\n</section>",
           "name" : "pagination.component.html",
           "order" : 2,
           "path" : "app/blog/components/pagination/"

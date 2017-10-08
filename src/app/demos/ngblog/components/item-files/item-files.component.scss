@@ -1,6 +1,6 @@
 @import "../../../../../styles/_colors";
 
-md-tab-group {
+mat-tab-group {
   background-color: $color50;
   /deep/ {
     .path {
@@ -12,8 +12,8 @@ md-tab-group {
       top: -12px;
     }
 
-    .md-tab-label-active { opacity: 1; }
-    .md-tab-header { border-color: $color100; }
+    .mat-tab-label-active { opacity: 1; }
+    .mat-tab-header { border-color: $color100; }
 
     .filename {
       font-size: 1em;

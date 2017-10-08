@@ -18,6 +18,7 @@ export class SnippetComponent implements OnInit {
   }
 
   editSnippet(snippet: Snippet) {
+    console.log('click');
     this.edit.emit(snippet);
   }
 

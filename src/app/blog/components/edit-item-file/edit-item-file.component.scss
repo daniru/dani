@@ -13,14 +13,14 @@ input {
   font-size: 14px;
 }
 
-md-toolbar {
+mat-toolbar {
   background: $color100;
   color: white;
   font-size: 14px;
   min-height: auto;
   padding: 3px;
 
-  /deep/ md-toolbar-row {
+  /deep/ mat-toolbar-row {
     height: auto;
   }
 }

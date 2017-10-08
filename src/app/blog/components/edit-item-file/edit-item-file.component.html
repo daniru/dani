@@ -1,35 +1,35 @@
 <div [formGroup]="form">
   
     <section *ngIf="!editFile">
-      <md-toolbar>
+      <mat-toolbar>
         <label>{{form.value.path}}{{form.value.name}}</label>
         <span class="fill-remaining-space"></span>
-        <button md-icon-button class="swap" mdTooltip="Swap Sections" *ngIf="showSwap" (click)="onSwapFile()">
-          <md-icon>swap_vert</md-icon>
+        <button mat-icon-button class="swap" matTooltip="Swap Sections" *ngIf="showSwap" (click)="onSwapFile()">
+          <mat-icon>swap_vert</mat-icon>
         </button>
-        <button md-icon-button class="delete"  mdTooltip="Delete Section" (click)="onDeleteFile()">
-          <md-icon color="red">delete</md-icon>
+        <button mat-icon-button class="delete"  matTooltip="Delete Section" (click)="onDeleteFile()">
+          <mat-icon color="red">delete</mat-icon>
         </button>
-      </md-toolbar>
+      </mat-toolbar>
       <pre class="prettyprint prettyprinted" [innerHTML]="form.value.content | prettyfile:form.value.name" (click)="onTextClick()"></pre>
     </section>
   
     <div *ngIf="editFile">
-      <md-toolbar>
-        <md-input-container class="full-width">
-          <input mdInput placeholder="Path" formControlName="path" type="text">
-        </md-input-container>
-        <md-input-container class="full-width">
-          <input mdInput placeholder="Filename" formControlName="name" type="text">
-        </md-input-container>
+      <mat-toolbar>
+        <mat-input-container class="full-width">
+          <input matInput placeholder="Path" formControlName="path" type="text">
+        </mat-input-container>
+        <mat-input-container class="full-width">
+          <input matInput placeholder="Filename" formControlName="name" type="text">
+        </mat-input-container>
         <span class="fill-remaining-space"></span>
-        <button md-icon-button class="done" mdTooltip="Finish Edit" (click)="onFinishEdit()">
-          <md-icon color="red">done</md-icon>
+        <button mat-icon-button class="done" matTooltip="Finish Edit" (click)="onFinishEdit()">
+          <mat-icon color="red">done</mat-icon>
         </button>
-      </md-toolbar>
-      <md-input-container class="full-width">
-        <textarea mdInput formControlName="content" cols="100" rows="10"></textarea>
-      </md-input-container>
+      </mat-toolbar>
+      <mat-input-container class="full-width">
+        <textarea matInput formControlName="content" cols="100" rows="10"></textarea>
+      </mat-input-container>
     </div>
   
   </div>

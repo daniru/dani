@@ -20,19 +20,6 @@
             display: flex;
             flex-direction: column;
 
-            .header {
-                display: flex;
-
-                .title {
-                    // border-bottom: 3px solid $color300;
-                    background: $color400;
-                    color: white;
-                    // font-family: 'Dosis', sans-serif;
-                    font-size: 1.5em;
-                    padding: 0 20px 5px 20px;
-                }
-            }
-
             .main {
                 padding: 20px 0;
             }
@@ -47,12 +34,61 @@
     }
 }
 
-md-card {
+.item3 {
+     margin: 2%;
+}
+
+.header {
+    display: flex;
+
+    .title {
+        // border-bottom: 3px solid $color300;
+        background: $color400;
+        color: white;
+        // font-family: 'Dosis', sans-serif;
+        font-size: 1.5em;
+        padding: 0 20px 5px 20px;
+    }
+}
+
+mat-card {
     width: 90%;
     height: 100%;
     background: transparent;
     border: 0;
     box-shadow: none;
+}
 
-    
+mat-expansion-panel {
+    width: 100%;
+
+    img {
+        display: inline;
+        height: 30px;
+    }
+
+    .position {
+        flex-grow: 0;
+        width: 20%;
+    }
+
+    .period {
+        flex-grow: 0;
+        width: 15%;
+        i {
+            font-size: 1.2em;
+            padding: 0 5px;
+            color: $color300;
+        }
+    }
+
+    .location {
+        flex-grow: 0;
+        width: 15%;
+        i {
+            font-size: 1.2em;
+            padding: 0 5px;
+            color: $color300;
+        }
+    }
 }

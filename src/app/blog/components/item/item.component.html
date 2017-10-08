@@ -1,16 +1,16 @@
 <div class="container" *ngIf="blog && !editMode">
-  <md-card>
-    <md-card-header>
+  <mat-card>
+    <mat-card-header>
       <dr-item-header [blog]="blog" [headerLink]="false" (editMode)="onEditClick()" (delete)="onDelete()"></dr-item-header>
-    </md-card-header> 
-    <md-card-content>
+    </mat-card-header> 
+    <mat-card-content>
         <dr-item-section *ngFor="let section of blog.sections" [section]="section"></dr-item-section>
         <dr-item-comments></dr-item-comments>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>
 <dr-edit-item [blog]="blog" *ngIf="editMode" (save)="onSave($event)"></dr-edit-item>
 
 <section class="edit" *ngIf="!editMode && authService.user?.isAdmin">
-  <a md-fab color="primary" (click)="onEditClick($event)"><md-icon>edit</md-icon></a>
+  <a mat-fab color="primary" (click)="onEditClick($event)"><mat-icon>edit</mat-icon></a>
 </section>

@@ -1,53 +1,53 @@
 <section class="content">
   <section class="selector">
-    <md-input-container>
-      <input mdInput placeholder="Bus or Line Tube" [mdAutocomplete]="auto" [formControl]="term">
-    </md-input-container>
-    <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
-      <md-option *ngFor="let item of items" [value]="item" (onSelectionChange)="onChange(item)">
+    <mat-input-container>
+      <input matInput placeholder="Bus or Line Tube" [matAutocomplete]="auto" [formControl]="term">
+    </mat-input-container>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let item of items" [value]="item" (onSelectionChange)="onChange(item)">
         {{ item.lineName }}
-      </md-option>
-    </md-autocomplete>    
+      </mat-option>
+    </mat-autocomplete>    
   </section>
   <section class="display" >
-    <md-card class="info" *ngIf="data">
-      <md-card-header>
+    <mat-card class="info" *ngIf="data">
+      <mat-card-header>
         <div class="buttons">
-          <button md-raised-button [class.active]="!outbound" (click)="toggleOutbound()">Inbound</button>
-          <button md-raised-button [class.active]="outbound" (click)="toggleOutbound()">Outbound</button>
+          <button mat-raised-button [class.active]="!outbound" (click)="toggleOutbound()">Inbound</button>
+          <button mat-raised-button [class.active]="outbound" (click)="toggleOutbound()">Outbound</button>
         </div>
-        <md-card-title>{{data.lineName}}</md-card-title>
-        <md-card-subtitle>{{data.orderedLineRoutes[0]?.name}}</md-card-subtitle>
-      </md-card-header>
-      <md-card-content>
+        <mat-card-title>{{data.lineName}}</mat-card-title>
+        <mat-card-subtitle>{{data.orderedLineRoutes[0]?.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
         <section class="map">
           <dr-gmaps [lat]="minLat" [lng]="minLon" [markers]="markers" [polygons]="polygons"></dr-gmaps>
         </section>
-      </md-card-content>
-    </md-card>
-    <md-card class="stations">
-      <md-card-content>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="stations">
+      <mat-card-content>
         <div class="example-header">
-          <md-input-container floatPlaceholder="never">
-            <input mdInput #filter placeholder="Filter stations">
-          </md-input-container>
+          <mat-input-container floatPlaceholder="never">
+            <input matInput #filter placeholder="Filter stations">
+          </mat-input-container>
         </div>
-        <md-table #table [dataSource]="dataSource" *ngIf="data">
+        <mat-table #table [dataSource]="dataSource" *ngIf="data">
 
           <ng-container cdkColumnDef="letter">
-            <md-header-cell *cdkHeaderCellDef> Letter </md-header-cell>
-            <md-cell *cdkCellDef="let row"> {{row.stopLetter}} </md-cell>
+            <mat-header-cell *cdkHeaderCellDef> Letter </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.stopLetter}} </mat-cell>
           </ng-container>
 
           <ng-container cdkColumnDef="name">
-            <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
-            <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+            <mat-header-cell *cdkHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *cdkCellDef="let row"> {{row.name}} </mat-cell>
           </ng-container>
 
-          <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
-          <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
-        </md-table>
-      </md-card-content>
-    </md-card>
+          <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </mat-card-content>
+    </mat-card>
   </section>
 </section>

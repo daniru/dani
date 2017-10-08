@@ -1,20 +1,20 @@
 <div class="container" *ngIf="form">
-  <md-card class="row">
+  <mat-card class="row">
     <form [formGroup]="form">
       <div class="row">
-        <md-input-container class="full-width">
-          <input mdInput placeholder="Key" formControlName="key" type="text">
-        </md-input-container>
-        <md-input-container class="full-width">
-            <input mdInput placeholder="Github" formControlName="github" type="text">
-        </md-input-container>
+        <mat-input-container class="full-width">
+          <input matInput placeholder="Key" formControlName="key" type="text">
+        </mat-input-container>
+        <mat-input-container class="full-width">
+            <input matInput placeholder="Github" formControlName="github" type="text">
+        </mat-input-container>
       </div>
-      <md-input-container class="full-width">
-        <input mdInput placeholder="Title" formControlName="title" type="text">
-      </md-input-container>
-      <md-input-container class="full-width">
-        <input mdInput placeholder="Publish" formControlName="date_published" type="datetime-local">
-      </md-input-container>
+      <mat-input-container class="full-width">
+        <input matInput placeholder="Title" formControlName="title" type="text">
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <input matInput placeholder="Publish" formControlName="date_published" type="datetime-local">
+      </mat-input-container>
       <div formArrayName="sections">
         <div *ngFor="let control of (form.controls['sections'].controls | orderByOrder); let i = index;" class="section">
           <dr-edit-item-section
@@ -28,8 +28,8 @@
         </div>
       </div>
     </form>
-  </md-card>
+  </mat-card>
 </div>
 <section class="save">
-  <a md-fab color="primary" (click)="onSave($event)" [disabled]="!form.valid"><md-icon>save</md-icon></a>
+  <a mat-fab color="primary" (click)="onSave($event)" [disabled]="!form.valid"><mat-icon>save</mat-icon></a>
 </section>

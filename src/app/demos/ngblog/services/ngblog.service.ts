@@ -27,16 +27,14 @@ export class NgblogService {
 
   // method to get on blog by key
   getBlog(key: string): Observable<Blog> {
-    return null;
-    // this.afdb.list(`/blog`)
-    //   .query({
-    //       orderByChild: 'key',
-    //       equalTo: key,
-    //       limitToFirst: 1
-    //     })
-    //   .valueChanges()
-    //   .filter((x: Blog) => x.date_published !== null && moment(x.date_published).isSameOrBefore(moment.utc()))
-    //   .map(x => x ? x[0] : null);
+    return this.afdb.list(`/blog`, ref => {
+      return ref.orderByChild('key')
+        .equalTo(key)
+        .limitToFirst(1)
+      })
+      .valueChanges()
+      .filter((x: Blog[]) => x[0].date_published !== null && moment(x[0].date_published).isSameOrBefore(moment.utc()))
+      .map((x: Blog[]) => x ? x[0] : null);
   }
 
 }

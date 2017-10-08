@@ -1,9 +1,9 @@
 <div [formGroup]="form" class="form">
   <div class="flex">
   <div id="wrapper" [innerHTML]="form.controls['text'].value | markdown" *ngIf="!editText" (click)="onTextClick($event)"></div>
-  <md-input-container class="full-size" *ngIf="editText">
-    <textarea mdInput md-textarea-autosize formControlName="text" rows=10 (focusout)="onTextAreaFocusOut()" class="full-size"></textarea>
-  </md-input-container>
+  <mat-input-container class="full-size" *ngIf="editText">
+    <textarea matInput mat-textarea-autosize formControlName="text" rows=10 (focusout)="onTextAreaFocusOut()" class="full-size"></textarea>
+  </mat-input-container>
 </div>
 <section *ngIf="form.controls.files.value.length > 0">
   <div *ngFor="let control of (form.controls.files.controls | orderByOrder); let i = index;" class="editfile" >
@@ -16,19 +16,19 @@
   </div>
 </section>
 </div>
-<md-toolbar>
-<button md-icon-button class="swap" *ngIf="showSwap" (click)="onSwapSection()" mdTooltip="Swap Sections">
-  <md-icon>swap_vert</md-icon>
+<mat-toolbar>
+<button mat-icon-button class="swap" *ngIf="showSwap" (click)="onSwapSection()" matTooltip="Swap Sections">
+  <mat-icon>swap_vert</mat-icon>
 </button>
-<button md-icon-button class="addfile"  (click)="onAddFile()" mdTooltip="Add File">
-  <md-icon>note_add</md-icon>
-</button>
-<span class="fill-remaining-space"></span>
-<button md-icon-button class="addsection" (click)="onAddSection()" mdTooltip="Add Section">
-  <md-icon>add_circle_outline</md-icon>
+<button mat-icon-button class="addfile"  (click)="onAddFile()" matTooltip="Add File">
+  <mat-icon>note_add</mat-icon>
 </button>
 <span class="fill-remaining-space"></span>
-<button md-icon-button class="delete" (click)="onDeleteSection()" mdTooltip="Delete Section">
-  <md-icon color="red">delete</md-icon>
+<button mat-icon-button class="addsection" (click)="onAddSection()" matTooltip="Add Section">
+  <mat-icon>add_circle_outline</mat-icon>
 </button>
-</md-toolbar>
+<span class="fill-remaining-space"></span>
+<button mat-icon-button class="delete" (click)="onDeleteSection()" matTooltip="Delete Section">
+  <mat-icon color="red">delete</mat-icon>
+</button>
+</mat-toolbar>

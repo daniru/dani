@@ -2,5 +2,5 @@
     <dr-list-item [blog]="item"></dr-list-item> 
 </div> 
 <section class="add" *ngIf="authService.user?.isAdmin" [routerLink]="['./new']">
-    <a md-fab color="primary" routerLink="." mdTooltip="Add Blog" mdTooltipPosition="left"><md-icon>add</md-icon></a>
+    <a mat-fab color="primary" routerLink="." matTooltip="Add Blog" matTooltipPosition="left"><mat-icon>add</mat-icon></a>
 </section>

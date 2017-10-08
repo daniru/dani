@@ -1,14 +1,14 @@
-<md-toolbar color="primary" [@headerState]="mode">
+<mat-toolbar color="primary" [@headerState]="mode">
   <div class="logo" [@logoState]="mode">
     <div class="name" [@nameState]="mode">Daniel Rubio</div>
     <div class="role" [@roleState]="mode">Full Stack Developer</div>
   </div>
   <div class="spacer"></div>
   <div class="buttons" [@buttonsState]="mode">
-    <button md-button [routerLink]="['/']">Home</button>
-    <button md-button [routerLink]="['/blog']">Blog</button>
-    <button md-button [routerLink]="['/demos']">Demos</button>
-    <button md-button [routerLink]="['/snippets']">Code Snippets</button>
+    <button mat-button [routerLink]="['/']">Home</button>
+    <button mat-button [routerLink]="['/blog']">Blog</button>
+    <button mat-button [routerLink]="['/demos']">Demos</button>
+    <button mat-button [routerLink]="['/snippets']">Code Snippets</button>
     <dr-auth></dr-auth>
   </div>
-</md-toolbar>
+</mat-toolbar>

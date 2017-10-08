@@ -7,12 +7,12 @@
   <dr-search-box placeholder="Search Snippet" (textChanged)="onChangeFilter($event)"></dr-search-box>
   <section class="content">
     <section class="languages">
-      <md-list>
-        <md-list-item class="item" *ngFor="let item of languages | async" (click)="selectLanguage(item)" [class.selected]="language == item">
+      <mat-list>
+        <mat-list-item class="item" *ngFor="let item of languages | async" (click)="selectLanguage(item)" [class.selected]="language == item">
           <i class="material-icons">keyboard_arrow_right</i>
           <div class="name">{{item}}</div>
-        </md-list-item>
-      </md-list>
+        </mat-list-item>
+      </mat-list>
     </section>
     <section class="snippets">
       <dr-snippet [item]="item" *ngFor="let item of snippets | async" (edit)="editSnippet($event)">{{item.title}}</dr-snippet>

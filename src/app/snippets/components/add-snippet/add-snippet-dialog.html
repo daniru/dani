@@ -1,29 +1,29 @@
-<h2 md-dialog-title> Add New Snippet </h2>
-<md-dialog-content class="content" *ngIf="form">
+<h2 mat-dialog-title> Add New Snippet </h2>
+<mat-dialog-content class="content" *ngIf="form">
     <form [formGroup]="form">
         <div class="row">
-            <md-input-container>
-                <input mdInput formControlName="language" placeholder="Language">
-            </md-input-container>
-                <md-input-container>
-                <input mdInput formControlName="category" placeholder="Category">
-            </md-input-container>
-            <md-input-container>
-                <input mdInput formControlName="extension" placeholder="extension">
-            </md-input-container>
+            <mat-form-field>
+                <input matInput formControlName="language" placeholder="Language">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="category" placeholder="Category">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="extension" placeholder="extension">
+            </mat-form-field>
         </div>
-        <md-input-container>
-            <input mdInput formControlName="title"  placeholder="Title">
-        </md-input-container>
-        <md-input-container>
-            <input mdInput formControlName="description" placeholder="Description">
-        </md-input-container>
-        <md-input-container>
-            <textarea  mdInput formControlName="code" placeholder="Code"></textarea>
-        </md-input-container>
+        <mat-form-field>
+            <input matInput formControlName="title"  placeholder="Title">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="description" placeholder="Description">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea  matInput formControlName="code" placeholder="Code"></textarea>
+        </mat-form-field>
     </form> 
-</md-dialog-content>
-<md-dialog-actions>
-    <button md-button md-dialog-close>Close</button>
-    <button md-button [md-dialog-close]="form">Save</button>
-</md-dialog-actions>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button [mat-dialog-close]="form">Save</button>
+</mat-dialog-actions>

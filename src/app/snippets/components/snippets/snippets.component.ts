@@ -58,6 +58,7 @@ export class SnippetsComponent implements OnInit {
   }
 
   editSnippet(snippet: Snippet) {
+    console.log('editSnippet', snippet);
     this.snippetToEdit = snippet
   }
 

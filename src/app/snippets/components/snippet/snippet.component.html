@@ -2,7 +2,7 @@
   <h1 class="mat-title">
     {{item.title}}
     <div *ngIf="authService.user.isAdmin" class="editbutton">
-      <button md-mini-fab><i class="fa fa-pencil" (click)="editSnippet(item)"></i></button>
+      <button mat-mini-fab (click)="editSnippet(item)"><i class="fa fa-pencil"></i></button>
     </div>
   </h1>
   <h2 class="mat-body-1">{{item.description}}</h2>

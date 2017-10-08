@@ -1,5 +1,5 @@
-<md-list>
-  <md-list-item *ngFor="let status of stream | async">
+<mat-list>
+  <mat-list-item *ngFor="let status of stream | async">
       <h4 [class]="status.id"><div>{{status.name}}</div></h4>
       <content class="statuswrapper">
         <content class="status"  *ngFor="let linestatus of status.lineStatuses">
@@ -10,5 +10,5 @@
           </div>
         </content>
       </content>
-  </md-list-item>
-</md-list>
+  </mat-list-item>
+</mat-list>

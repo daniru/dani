@@ -1,17 +1,17 @@
 @import '../../../../styles/_colors';
 
-md-card {
+mat-card {
   margin: 10px;
   background: transparent;
   border: 0;
   box-shadow: none !important;
 }
 
-md-card-header {
+mat-card-header {
   height: auto;
 }
 
-md-card-actions {
+mat-card-actions {
   text-align: center;
   button {
     color: $color400;

@@ -3,7 +3,7 @@
     This demo is a small angular application that retrieve data from a public api. In this case, we use the <a href="https://api.tfl.gov.uk/">Transport for London API</a> to
     get the current status of the line, and a search by line to retrieve stops and routes.
   </h1>
-  <md-list>
-    <md-list-item class="item" *ngFor="let item of list" [routerLink]="item.link">{{item.text}}</md-list-item>
-  </md-list>
+  <mat-list>
+    <mat-list-item class="item" *ngFor="let item of list" [routerLink]="item.link">{{item.text}}</mat-list-item>
+  </mat-list>
 </section>

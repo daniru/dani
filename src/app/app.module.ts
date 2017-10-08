@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatCommonModule, MAT_PLACEHOLDER_GLOBAL_OPTIONS } from '@angular/material';
+import { MatDialogModule, MatMenuModule, MatTooltipModule, MatExpansionModule
+  // MatCommonModule, MAT_PLACEHOLDER_GLOBAL_OPTIONS
+} from '@angular/material';
 // import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
@@ -21,7 +23,11 @@ import { environment } from '../environments/environment';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    MatCommonModule,
+    // MatCommonModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatTooltipModule,
+    MatExpansionModule,
     BrowserAnimationsModule,
     SharedModule,
     // AgmCoreModule.forRoot({
@@ -32,7 +38,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule, // i
   ],
   providers: [
-    {provide: MAT_PLACEHOLDER_GLOBAL_OPTIONS, useValue: { float: 'always' }},
+    // {provide: MAT_PLACEHOLDER_GLOBAL_OPTIONS, useValue: { float: 'always' }},
     AuthService,
     SubtitleService
   ],

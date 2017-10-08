@@ -13,7 +13,7 @@
   }
 </script> 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{apiKey}}&callback=initMap"></script> -->
-<agm-map [latitude]="lat" [longitude]="lng" [usePanning]="true" [zoom]="12">
+<!-- <agm-map [latitude]="lat" [longitude]="lng" [usePanning]="true" [zoom]="12">
   <agm-marker 
     *ngFor="let marker of markers"
     [latitude]="marker.lat"
@@ -29,11 +29,13 @@
       </div>
     </agm-info-window>
   </agm-marker>
-  <!-- <agm-polygon [paths]="polygon.path" *ngFor="let polygon of polygons"></agm-polygon> -->
+  
   <agm-polyline [strokeColor]="'#DC241F'" [strokeOpacity]="1" [strokeWeight]="1" [zIndex]="999" *ngFor="let polygon of polygons">
     <agm-polyline-point 
       *ngFor="let point of polygon.path"
       [latitude]="point.lat"
       [longitude]="point.lng"></agm-polyline-point>
   </agm-polyline>
-</agm-map>
+</agm-map> -->
+
+<!-- <agm-polygon [paths]="polygon.path" *ngFor="let polygon of polygons"></agm-polygon> -->

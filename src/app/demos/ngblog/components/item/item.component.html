@@ -1,11 +1,11 @@
 <div class="container" *ngIf="blog">
-  <md-card>
-    <md-card-header>
+  <mat-card>
+    <mat-card-header>
        <dr-item-header [blog]="blog"></dr-item-header> 
-    </md-card-header> 
-    <md-card-content>
+    </mat-card-header> 
+    <mat-card-content>
         <dr-item-section *ngFor="let section of blog.sections" [section]="section"></dr-item-section>
         <dr-item-comments></dr-item-comments>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

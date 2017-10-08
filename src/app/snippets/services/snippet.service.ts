@@ -30,9 +30,10 @@ export class SnippetService {
 
     this._snippetSubject = new Subject<Snippet[]>();
 
-    this._afdb.list('/snippet')
+    this._afdb.object('/snippet')
       .valueChanges()
-      .map((x: Snippet[]) => x )
+      .do(x => console.log('from service', x))
+      .map((snippets: any) => this._convertObjectToArray(snippets))
       .do((x) => { this._localCache = x; })
       .do((x) => this._snippetSubject.next(x))
       .subscribe();
@@ -108,7 +109,9 @@ export class SnippetService {
 
   private _convertObjectToArray(data: any): Snippet[] {
     return Object.keys(data).map((key: string) => {
-      return <Snippet>data[key];
+      const object = <Snippet>data[key];
+      object.$key = key;
+      return object;
     });
   }
 
