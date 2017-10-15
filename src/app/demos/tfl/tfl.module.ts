@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListModule, MatIconModule, MatGridListModule, MatTabsModule, MatSelectModule, MatTableModule,
   MatAutocompleteModule, MatInputModule, MatSlideToggleModule, MatCardModule, MatButtonModule } from '@angular/material';
-//import { CdkTableModule } from '@angular/cdk';
+// import { CdkTableModule } from '@angular/cdk';
 import { TflRoutingModule } from './tfl-routing.module';
 import { SharedModule } from './../../shared/shared.module';
 
@@ -35,7 +35,7 @@ import { StatusPanelComponent } from './components/status-panel/status-panel.com
     MatCardModule,
     MatButtonModule,
     MatTableModule,
-    //CdkTableModule
+    // CdkTableModule
   ],
   declarations: [
     TflComponent, StatusComponent, RouteComponent, HomeComponent, StatusPanelComponent,
