@@ -1,29 +1,32 @@
-<h2 mat-dialog-title> Add New Snippet </h2>
-<mat-dialog-content class="content" *ngIf="form">
-    <form [formGroup]="form">
-        <div class="row">
-            <mat-form-field>
-                <input matInput formControlName="language" placeholder="Language">
+<div class="dialog">
+    <h2 mat-dialog-title> Add New Snippet </h2>
+    <mat-dialog-content class="content" *ngIf="form">
+        <form [formGroup]="form">
+            <div class="row">
+                <mat-form-field>
+                    <input matInput formControlName="language" placeholder="Language">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="category" placeholder="Category">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="extension" placeholder="Extension">
+                </mat-form-field>
+            </div>
+            <mat-form-field class="full">
+                <input matInput formControlName="title"  placeholder="Title" >
             </mat-form-field>
-            <mat-form-field>
-                <input matInput formControlName="category" placeholder="Category">
+            <mat-form-field class="full">
+                <input matInput formControlName="description" placeholder="Description">
             </mat-form-field>
-            <mat-form-field>
-                <input matInput formControlName="extension" placeholder="extension">
+            <mat-form-field class="full">
+                <textarea  matInput formControlName="code" placeholder="Code"></textarea>
             </mat-form-field>
-        </div>
-        <mat-form-field>
-            <input matInput formControlName="title"  placeholder="Title">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput formControlName="description" placeholder="Description">
-        </mat-form-field>
-        <mat-form-field>
-            <textarea  matInput formControlName="code" placeholder="Code"></textarea>
-        </mat-form-field>
-    </form> 
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-button mat-dialog-close>Close</button>
-    <button mat-button [mat-dialog-close]="form">Save</button>
-</mat-dialog-actions>
+        </form> 
+    </mat-dialog-content>
+    <mat-dialog-actions class="actions">
+        <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <div class="separator"></div>
+        <button mat-raised-button color="primary" [mat-dialog-close]="form">Save</button>
+    </mat-dialog-actions>
+</div>

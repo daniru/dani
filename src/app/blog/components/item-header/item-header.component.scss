@@ -4,27 +4,47 @@
   width: 100%;
 }
 
-
+$color2: #a5acb0;
+$color1: #5f6a72;
 
 mat-card-title {
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
 
-    .header {
-        display: flex;
-        text-align: center;
-        border-bottom: 1px solid $color100;
+    .mat-title {
+        background: #b4b7b8;
+        text-align: left;
+        border-left:3px solid #36424a;
+        
+        // border-bottom: 1px solid $color100;
         cursor: pointer;
-        padding: 0;
+        padding: 10px;
         &:hover { opacity: .7; }
         .title {
             font-family: 'Dosis', sans-serif;
             font-size: 2.5em;
             padding: 0 0 10px 0;
         }
+        margin: 0;
+        margin-bottom: 1px;
+        color: black;
+        font-size: 2em;
+        font-weight: bold;
+        color: #1E262D;
+        // background: #d1d4d3;
+        // background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+        // background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+        // background: linear-gradient(to right,$color1 0%, $color2 100%);
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d252c', endColorstr='#5b6770',GradientType=1 );
     }
 
     .subheader {
+        border-bottom: 1px solid #b4b7b8;
+        border-left:3px solid #a5acb0;
+        background: #c4c7c8;
+        margin-bottom: 1px;
         display: flex;
 
         h3 {

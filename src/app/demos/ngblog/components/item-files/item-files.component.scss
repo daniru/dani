@@ -1,7 +1,9 @@
 @import "../../../../../styles/_colors";
 
 mat-tab-group {
-  background-color: $color50;
+  background-color: $level0;
+  color: $level6;
+
   /deep/ {
     .path {
       color: $color700;
@@ -12,8 +14,11 @@ mat-tab-group {
       top: -12px;
     }
 
-    .mat-tab-label-active { opacity: 1; }
-    .mat-tab-header { border-color: $color100; }
+    .mat-tab-label-active {
+      opacity: 1;
+      background: $level1;
+    }
+    // .mat-tab-header { border-color: $color100; }
 
     .filename {
       font-size: 1em;
@@ -21,15 +26,16 @@ mat-tab-group {
     }
 
     .file {
-
+      color: $level5;
+      
       &.lang-html {
-        color: $green;
+        color: $level5;
       }
       &.lang-ts {
-        color: $blue;;
+        color: $level5;
       }
       &.lang-scss {
-        color: $purple;
+        color: $level5;
       }
     }
   }

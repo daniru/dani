@@ -1,14 +1,21 @@
 @import '../../../../styles/_colors';
 
 mat-card {
-  margin: 10px;
   background: transparent;
   border: 0;
   box-shadow: none !important;
+  margin: 10px 0 10px 0;
+  padding: 0;
 }
 
 mat-card-header {
   height: auto;
+}
+
+mat-card-content {
+  padding: 10px;
+  // border-left:3px solid #a5acb0;
+  background: #c4c7c8;
 }
 
 mat-card-actions {
@@ -30,3 +37,9 @@ mat-card-actions {
     margin: 0 auto;
   }
 }
+
+
+// opacity: .8;
+// cursor: pointer;
+// margin-bottom: 1px;
+// &:hover { opacity: 1; background: #a5acb0; }

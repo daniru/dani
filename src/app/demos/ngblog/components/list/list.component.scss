@@ -8,7 +8,15 @@
 }
 
 .mat-title {
-    padding: 20px 0;
+    margin: 10px 0 10px 0;
+    padding: 20px;
+    background: $level5;
+    font-size: 1em;
+    border-left: 3px solid $level3;
+}
+
+mat-list-item {
+    border-left: 3px solid $level1;
 }
 
 h2 {
@@ -17,10 +25,9 @@ h2 {
 }
 
 .item {
-    background: #fff;
-    border: 1px solid #d3dae2;
-    opacity: .8;
+    background: $level5;
+    // border: 1px solid #d3dae2;
     cursor: pointer;
     margin-bottom: 1px;
-    &:hover { opacity: 1; background: #d3dae2; }
+    &:hover { opacity: 1; background: $level4; }
 }

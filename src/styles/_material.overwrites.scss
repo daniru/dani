@@ -80,3 +80,12 @@ snack-bar-container {
     margin: 0;
   }
 }
+
+mat-dialog-container.mat-dialog-container {
+  padding: 0;
+  height: auto;
+}
+
+mat-dialog-container .mat-dialog-actions:last-child {
+  margin-bottom: 0;
+}

@@ -4,14 +4,15 @@
   </h1>
   <mat-list>
     <mat-list-item class="item" *ngFor="let item of list" [routerLink]="item.link">
-        {{item.text}}
-        <div class="fill"></div>
-        <div class="tags">
-          <div class="imgwrapper">
-              <img src="/assets/firebase.svg" matTooltip="Firebase" *ngIf="item.hasFirebase" />
-            </div>
-          <i [class]="tag.icon" [matTooltip]="tag.name" *ngFor="let tag of item.tags"></i>
-        </div>
+      <div class="text">
+        <div class="inner">{{item.text}}</div>
+      </div>
+      <div class="imgwrapper" *ngIf="item.hasFirebase">
+          <img src="/assets/firebase.svg" matTooltip="Firebase" />
+      </div>
+      <div class="imgwrapper" *ngFor="let tag of item.tags">
+        <i [class]="tag.icon" [matTooltip]="tag.name"></i>
+      </div>
       </mat-list-item>
   </mat-list>
 </section>

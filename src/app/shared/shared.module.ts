@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 import { HttpModule} from '@angular/http';
-import { MatToolbarModule, MatButtonModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatInputModule, MatSnackBarModule } from '@angular/material';
 
 import { HeaderComponent } from './components/header/header.component';
 import { ColumnComponent } from './components/column/column.component';
@@ -25,15 +25,16 @@ import { OrderByOrderPipe } from './pipes/order-by-order.pipe';
     HttpModule,
     MatToolbarModule,
     MatButtonModule,
+    MatSnackBarModule,
     // AgmCoreModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule
   ],
-  declarations: [HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
-    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe],
-  exports: [HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
-    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe],
+  declarations: [ HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
+    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe ],
+  exports: [ HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
+    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe ],
   entryComponents: [ AuthDialogComponent ]
 })
 export class SharedModule { }

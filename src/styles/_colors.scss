@@ -1,21 +1,32 @@
-$color: #333; //#202121;
-$background: #eAeAeA; //#f0f3f2;
+$level0: #1b232a;
+$level1: #36424a;
+$level2: #5f6a72;
+$level3: #828a8f;
+$level4: #a5acb0;
+$level5: #c4c7c8;
+$level6: #d1d4d3;
+
+$color: $level0; // #333; //#202121;
+$background: $level6; // #d0d3d4; //#f0f3f2;
 $background-header: #F1F4F5;
 $linksocial: #555;
 $secondary: #d3dae2;
 
 $white:      #fff !default;
 $black:      #000 !default;
-$red:        #d9534f !default;
-$orange:     #f0ad4e !default;
+$red:        #521210 !default;
+$orange:     #ef761b !default;
 $yellow:     #ffd500 !default;
-$green:      #5cb85c !default;
+$green:      #2a522b !default;
 $blue:       #0275d8 !default;
 $teal:       #5bc0de !default;
 $pink:       #ff5b77 !default;
 $purple:     #613d7c !default;
 $blue-dark:  #558abb;
 $blue-light: #dde4e9;
+$green-light: #bfc7bf;
+$red-light:        #cab2b1 !default;
+$orange-light:        #d8c8bc !default;
 
 // Create grayscale
 $gray-dark:                 #292b2c !default;
@@ -24,23 +35,23 @@ $gray-light:                #636c72 !default;
 $gray-lighter:              #d0d0d0 !default;
 $gray-lightest:             #e7e7e9 !default;
 
-$table-border-color: #d0d0d0;
-$table-background: #fff;
+$table-border-color: $level4;
+$table-background: $level5;
 
 $color50:   #e8eaf6;
-$color100:  #b7bec6;
+$color100:  #464a4c; // b7bec6;
 $color200:  #8792a0;
 $color300:  #576679;
-$color400:  #33465d;
-$color500:  #0f2540;
-$color600:  #0d213a;
-$color700:  #0b1b32;
-$color800:  #08162a;
+$color400:  #333C44; // #33465d;
+$color500:  #1d252c; // #0f2540;
+$color600:  #1d252c; // #0d213a;
+$color700:  #1d252c; // #0b1b32;
+$color800:  #1d252c; // #08162a;
 $color900:  #040d1c;
 $colorA100: #5196e4;
 $colorA200: #276bff;
 $colorA400: #004cf3;
 $colorA700: #0044da;
 
-// $font-family: 'Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif';
-$font-family: 'Dosis';
+$font-family: 'Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif';
+// $font-family: 'Dosis';

@@ -1,9 +1,26 @@
 @import '../../../../styles/_colors.scss';
 
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
 
-mat-toolbar.mat-toolbar.mat-primary {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+mat-toolbar.mat-toolbar {
+  background: $level0;
+  background: -moz-linear-gradient(left, $level0 0%, $level2 100%);
+  background: -webkit-linear-gradient(left, $level0 0%, $level2 100%);
+  background: linear-gradient(to right, $level0 0%, $level2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = $level0, endColorstr = $level2, GradientType = 1 );
   min-height: auto;
-  /deep/ {
+
+  ::ng-deep {
     .mat-toolbar-layout {
         height: 100%;
     }
@@ -20,11 +37,9 @@ mat-toolbar.mat-toolbar.mat-primary {
 
     .name {
       font-size: 2.5em;
-      // padding-bottom: 10px;
     }
 
     .role {
-      // opacity: .7;
       font-size: 1em;
     }
 
@@ -38,29 +53,4 @@ mat-toolbar.mat-toolbar.mat-primary {
     display:  flex;
   }
 
-  // &.small {
-  //   // min-height: 48px;
-  //   // /deep/ {
-  //   //   .mat-toolbar-row {
-  //   //       height: 48px;
-  //   //   }
-  //   // }
-
-  //   .logo {
-  //     cursor: pointer;
-  //     font-family: 'Dosis', sans-serif;
-  //     display: flex;
-
-  //     .name {
-  //       font-size: 1em;
-  //       padding-bottom: 10px;
-  //     }
-
-  //     .role {
-  //       opacity: .7;
-  //       font-size: .6em;
-  //       padding: 5px 0 0 10px;
-  //     }
-  //   }
-  // }
 }

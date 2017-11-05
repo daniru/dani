@@ -1,7 +1,6 @@
 @import  "../../../../styles/_colors";
 
 .content {
-    padding: 20px;
     width: 100%;
 
     .row {
@@ -12,17 +11,27 @@
         margin-bottom: 30px;
     }
 
+    .separator {
+        width: 20px;
+    }
+
     .item2,
     .item {
         display: flex;
         flex-direction: column;
-        flex-grow: 2;
-        max-width: calc(100% - 450px);
+        flex-grow: 20;
+        max-width: calc(100% - 500px);
+        padding: 20px;
+
+        .maintext {
+            background: #c4c7c8;
+            padding: 20px;
+        }
     }
 
     .item2 {
-        margin-left: 20px;
         max-width: 400px;
+        width: 400px;
     }
 }
 
@@ -32,12 +41,26 @@ i {
     color: $color200;
 }
 
+.mat-list {
+    padding: 0;
+}
+
+.mat-list-item {
+    background: #c4c7c8;
+    border-bottom: 1px solid #D0D3D4; 
+    border-left: 3px solid #a5acb0;
+}
+
 mat-expansion-panel {
     width: 100%;
-    background: transparent;
-    border: 0;
+    background: #c4c7c8;
+    border-bottom: 1px solid #D0D3D4;
     box-shadow: none !important;
-    
+    border-left: 3px solid #a5acb0;
+
+    ::ng-deep .mat-expansion-panel-content {
+        background: #D0D3D4;
+    }
     img {
         height: 20px;
     }

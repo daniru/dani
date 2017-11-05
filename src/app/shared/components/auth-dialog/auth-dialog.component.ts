@@ -19,8 +19,8 @@ export class AuthDialogComponent {
       .login(provider)
       .subscribe((errorMessage: string) => {
         if (errorMessage) {
-          const snackBarRef = this.snackBar.open(errorMessage, null, { duration: 3000 });
-          console.log('errorMessage', errorMessage, this.snackBar, snackBarRef);
+          const snackBarRef = this.snackBar.open(errorMessage, 'Undo', { duration: 3000 });
+          // console.log('errorMessage', errorMessage, this.snackBar, snackBarRef);
         } else {
           this.dialogRef.close();
         }

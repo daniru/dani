@@ -4,6 +4,8 @@
     get the current status of the line, and a search by line to retrieve stops and routes.
   </h1>
   <mat-list>
-    <mat-list-item class="item" *ngFor="let item of list" [routerLink]="item.link">{{item.text}}</mat-list-item>
+    <mat-list-item class="item" *ngFor="let item of list" [routerLink]="item.link">
+      <div class="text"><div class="inner">{{item.text}}</div></div>
+    </mat-list-item>
   </mat-list>
 </section>

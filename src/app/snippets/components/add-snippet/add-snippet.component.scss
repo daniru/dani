@@ -1,3 +1,12 @@
+// $color2: #a5acb0;
+// $color1: #5f6a72;
+$color2: #5b6770;
+$color1: #1d252c;
+
+:host {
+    padding: 0;
+}
+
 .add { 
     position: fixed;
     bottom: 20px;
@@ -10,6 +19,37 @@ form {
     min-width: 500px;
 }
 
-textarea {
-    min-height: 300px;
+
+
+.dialog {
+    h2 {
+        background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+        background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+        background: linear-gradient(to right,$color1 0%, $color2 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d252c', endColorstr='#5b6770',GradientType=1 );
+        color: white;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .content {
+        margin: 5px;
+    }
+
+    .actions {
+        padding: 20px;
+    }
+
+    textarea {
+        min-height: 300px;
+        width: 100%;
+    }
+
+    .full {
+        width: 100%;
+    }
+
+    .separator {
+        flex-grow: 2;
+    }
 }

@@ -17,7 +17,7 @@ export class AuthComponent {
      this.authService.logout();
   }
 
-  showPanel() {
+  openDialog() {
     const dialogRef = this._dialog.open(AuthDialogComponent);
     dialogRef.afterClosed().subscribe(result => { });
   }

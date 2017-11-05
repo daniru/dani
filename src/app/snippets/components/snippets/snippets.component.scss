@@ -1,47 +1,58 @@
-.content {
-    padding: 10px;
-    // display: flex;
-    width: 100%;
-    height: 1000%;
+@import '../../../../styles/_colors';
+
+.mat-title {
+    margin: 10px 0 10px 0;
+    padding: 20px;
+    background: $level5;
+    font-size: 1em;
+    border-left: 3px solid $level3;
 }
 
 .main {
-    padding: 10px;
     display: flex;
-    width: 100%;
-    height: 1000%;
+   
+    .languages {
+        min-width: 200px;
+
+        mat-list {
+            padding: 0;
+        }
+
+        .item {
+            border-left: 3px solid $level2;
+            cursor: pointer;
+            margin-bottom: 1px;
+            background: $level5;
+            font-size: 1em;
+            &.selected,
+            &:hover { opacity: 1; background: $level4; }
+        }
+    }
+
+    .separation {
+        min-width: 20px; 
+    }
+
+    .snippets {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+        overflow: hidden;
+    }
 }
 
-.mat-title {
-    padding: 20px 0;
-}
-
-.languages {
-    min-width: 200px;
-}
-
-
-h2 {
-    padding: 20px 10px;
-    margin: 0;
-}
-
-.item {
-    // background: #fff;
-    // border: 1px solid #d3dae2;
-    opacity: .8;
-    min-width: 200px;
-    cursor: pointer;
-    margin-bottom: 1px;
-    &.selected,
-    &:hover { opacity: 1; background: #d3dae2; }
-}
-
-.snippets {
-    padding: 10px 20px;
+.row {
     display: flex;
-    flex-direction: column;
+}
+
+dr-search-box {
     flex-grow: 2;
-    overflow: hidden;
 }
+
+dr-add-snippet {
+    margin-top: 15px;
+}
+
+
+
 

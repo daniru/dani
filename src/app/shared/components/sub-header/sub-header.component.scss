@@ -1,21 +1,18 @@
 @import '../../../../styles/_colors';
 
 mat-toolbar.mat-toolbar {
-  // box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
-  background: transparent;
   display: flex;
-  // background: linear-gradient(145deg, $secondary ,transparent);
-  // background: $secondary;
-  border-bottom: 1px solid #eee;
+  margin: 1px 0 1px 0;
+  background: $level4;
+  background: -moz-linear-gradient(left, $level4 0%, $level6 100%);
+  background: -webkit-linear-gradient(left, $level4 0%, $level6 100%);
+  background: linear-gradient(to right, $level4 0%, $level6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = $level4, endColorstr = $level6, GradientType = 1 );
   font-size: .9em;
-  //min-height: 32px;
   min-height: auto;
   height: 48px;
-  // background: #669ccc; //#427eb3;
-  // color: white;
-  /deep/ {
+  ::ng-deep {
     .mat-toolbar-row {
-        // height: 32px;
         height: 48px;
     }
   }

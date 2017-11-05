@@ -1,10 +1,17 @@
+@import '../../../../../styles/_colors';
+
 mat-card {
-  margin: 10px;
+  margin-top: 20px;
   background: transparent;
   border: 0;
   box-shadow: none !important;
+  padding: 0;
 }
 
 mat-card-header {
   height: auto;
+}
+
+mat-card-content {
+  padding: 20px 0;
 }

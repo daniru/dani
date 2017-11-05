@@ -1,3 +1,40 @@
+@import '../../../../styles/_colors';
+
+.snippet {
+    // border-left: 3px solid $level1;
+
+    .mat-title {
+      margin: 0;
+      color: $level5;
+      background: $level2;
+      margin-bottom: 1px;
+
+      display: flex;
+      width: 100%;
+
+      .titlename {
+        flex-grow: 2;
+        padding-left: 10px;
+      }
+
+      .editbutton { 
+        color: $level6;
+        margin-left: 1px;
+        padding-right: 10px;
+        width: 20px;
+        button {
+          border: 0;
+          background: transparent;
+          cursor: pointer;
+          padding-bottom: 10px;
+          &:hover {
+            opacity: .5;
+          }
+        }
+      }
+    }  
+}
+
 .code {
     max-width: 100%;
     overflow: hidden;
@@ -11,6 +48,3 @@ pre {
   padding: 10px 20px;
 }
 
-.editbutton { 
-  float: right;
-}

@@ -2,7 +2,13 @@
 @import "./styles/_material.overwrites";
 
 body, html {
-  background-color: $background;
+  // background-color: $background;
+  background: $level6;
+  // background: -moz-linear-gradient(left, $level4 0%, $level6 100%);
+  // background: -webkit-linear-gradient(left, $level4 0%, $level6 100%);
+  // background: linear-gradient(to right, $level4 0%, $level6 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = $level4, endColorstr = $level6, GradientType = 1 );
+
   color: $color;
   font-family: $font-family;
   margin: 0;
