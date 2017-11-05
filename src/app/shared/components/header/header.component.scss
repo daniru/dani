@@ -20,27 +20,29 @@ mat-toolbar.mat-toolbar {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = $level0, endColorstr = $level2, GradientType = 1 );
   min-height: auto;
 
-  ::ng-deep {
-    .mat-toolbar-layout {
-        height: 100%;
-    }
-    .mat-toolbar-row {
-        height: 100%;
-    }
-  }
+  // ::ng-deep {
+  //   .mat-toolbar-layout {
+  //       height: 100%;
+  //   }
+  //   .mat-toolbar-row {
+  //       height: 100%;
+  //   }
+  // }
 
   .logo {
     cursor: pointer;
     font-family: 'Dosis', sans-serif;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    flex-direction: row;
 
     .name {
-      font-size: 2.5em;
+      font-size: 1.5em;
     }
 
     .role {
-      font-size: 1em;
+      padding-left: 10px;
+      font-size: 0.5em;
     }
 
   }

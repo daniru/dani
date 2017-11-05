@@ -1,19 +1,30 @@
 <mat-card-title>
   <div class="mat-title" ><span [routerLink]="blog.key">{{blog.title}}</span></div>
   <div class="subheader">
-    <h3><i class="fa fa-calendar"></i>{{blog.date_published | date:'dd MMMM y'}}</h3> 
+    <div class="date">
+      <h3><i class="fa fa-calendar"></i>{{blog.date_published | date:'dd MMMM y'}}</h3>
+    </div>
+    <div class="date">
+      <h3><i class="fa fa-user"></i>Daniru</h3> 
+    </div>
     <div class="fill"></div>
-    <button mat-icon-button class="button github" 
-    matTooltip="GitHub repository" *ngIf="blog.github" (click)='openWindow(blog.github)'><i class="mdi mdi-github-circle"></i></button>
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu" matTooltip="Share" (mouseover)="someMethod()">
-      <mat-icon>share</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
+    <div class="github" *ngIf="blog.github">
+      <button mat-icon-button  matTooltip="GitHub repository" (click)="openWindow(blog.github)">
+        <i class="mdi mdi-github-circle"></i>
+      </button>
+    </div>
+    <div class="share">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="menu" matTooltip="Share" (click)="someMethod()">
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card-title>
+  <mat-menu #menu="matMenu">
       <button mat-menu-item *ngFor="let item of socialLinks"
         (click)='openWindow(item.url)'>
         <i [class]="item.icon"></i>
         <span target="social">{{item.name}}</span>
       </button>
     </mat-menu>
-  </div>
-</mat-card-title>
+  

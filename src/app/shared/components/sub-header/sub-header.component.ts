@@ -8,22 +8,22 @@ import { SubtitleService } from './../../../services/subtitle.service';
   selector: 'dr-sub-header',
   templateUrl: './sub-header.component.html',
   styleUrls: ['./sub-header.component.scss'],
-  animations: [
-    trigger('subHeaderState', [
-      transition('void => *',
-        animate(1500, keyframes([
-          style({ height: '0px', opacity: '0', border: '0' }),
-          style({ height: '36px', opacity: '1', border: '0' })
-        ]))
-      ),
-      transition('* => void',
-        animate(1500, keyframes([
-          style({ height: '36px', opacity: '1', border: '0' }),
-          style({ height: '0px', opacity: '0', border: '0' })
-        ]))
-      ),
-    ]),
-  ]
+  // animations: [
+  //   trigger('subHeaderState', [
+  //     transition('void => *',
+  //       animate(1500, keyframes([
+  //         style({ height: '0px', opacity: '0', border: '0' }),
+  //         style({ height: '36px', opacity: '1', border: '0' })
+  //       ]))
+  //     ),
+  //     transition('* => void',
+  //       animate(1500, keyframes([
+  //         style({ height: '36px', opacity: '1', border: '0' }),
+  //         style({ height: '0px', opacity: '0', border: '0' })
+  //       ]))
+  //     ),
+  //   ]),
+  // ]
 })
 export class SubHeaderComponent implements OnInit, OnDestroy {
 
