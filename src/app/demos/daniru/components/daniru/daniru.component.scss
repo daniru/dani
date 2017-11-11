@@ -1,18 +1,7 @@
-@import '../../../../../styles/_colors';
+@import '../../../../../styles/_container';
 
-i {
-    font-size: 1.5em;
-    padding-right: 5px;
-}
-
-.mat-title {
-    margin: 10px 0 10px 0;
-    padding: 20px;
-    background: $level5;
-    font-size: 1em;
-    border-left: 3px solid $level3;
-}
-
-.mat-body-1 {
-    font-size:16px;
+a {
+    margin: 2em;
+    background-color: $level0;
+    color: $level6;
 }

@@ -1,16 +1,20 @@
 @import '../../../../../styles/_colors';
 
-
 .content {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 30px;
+    flex-direction: row-reverse;
+    margin-bottom: 2em;
 
     .column {
-        max-width: 200px;
+        // min-width: 200px;
         button {
-            width: 90%;
-            margin: 2% 5%;
+            // width: 90%;
+            // margin: 2% 5%;
+            padding: 0;
+            margin: 0;
+            height: 3em;
+            width: 2em;
+
         }
     }
 
@@ -38,5 +42,18 @@
         padding: 10px;
         margin: 5px;
         font-size: .9em;
+    }
+}
+
+@media (max-width: 600px)
+{
+    .content {
+        display: flex;
+        flex-direction: column;       
+    
+        .column {
+            display: flex;
+            flex-direction: row;
+        }
     }
 }

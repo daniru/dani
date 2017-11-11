@@ -1,13 +1,7 @@
 <div class="content">
-  <div class="boardcontainer">
-    <div class="board">
-      <mat-grid-list [cols]="gameService.columns">
-          <mat-grid-tile *ngFor="let tile of gameService.board | async" [class.active]="tile"></mat-grid-tile>
-      </mat-grid-list>
-    </div>
-  </div>
+
   <div class="column">
-      <button mat-raised-button (click)="gameService.start(null)">Start</button>
+      <button mat-raised-button (click)="gameService.start(null)"><i class="fa fa-play"></i></button>
       <button mat-raised-button (click)="gameService.start('pentadecathlon')">Start Pentadecathlon </button>
       <button mat-raised-button *ngIf="!gameService.stopped" (click)="gameService.stop()">Stop</button>
       <button mat-raised-button *ngIf="gameService.stopped" (click)="gameService.resume()">Resume</button>
@@ -15,5 +9,12 @@
       <mat-slider color="primary" min=10 max=40 step=10 [value]="gameService.columns" (change)="onColumnSizeChange($event)"></mat-slider>
       <div class="accent">{{gameService.repetitions}} Iterations</div>
       <div class="fill"></div>
+  </div>
+  <div class="boardcontainer">
+    <div class="board">
+      <mat-grid-list [cols]="gameService.columns">
+          <mat-grid-tile *ngFor="let tile of gameService.board | async" [class.active]="tile"></mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </div>
 </div>
