@@ -1,4 +1,4 @@
-<mat-toolbar color="accent" *ngIf="sections?.length > 0" [@subHeaderState]>
+<mat-toolbar color="accent" *ngIf="sections?.length > 0">
   <section *ngFor="let section of sections, let i = index">
     <div [class.link]="section.link" [routerLink]="section.link">{{section.title}}</div>
     <div class="separator" *ngIf="i < sections.length - 1">></div>

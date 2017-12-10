@@ -11,7 +11,7 @@ export class DemosComponent implements OnInit {
 
   ngOnInit() {
     this.list = [{
-      text: 'www.daniru.com - My website',
+      text: 'My website',
       link: ['/', 'demos', 'daniru'],
       tags: [{
         name: 'Angular',

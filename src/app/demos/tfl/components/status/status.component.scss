@@ -1,5 +1,16 @@
+@import '../../../../../styles/_container';
 
-.content {
-    padding: 0 20px;
+:host {
+    display: flex;
+    width: calc(100% - 20px);
 }
 
+.container {
+    display: flex;
+    width: 100%;
+}
+
+mat-tab-group {
+    max-width: 100%;
+    width: 100%;
+}

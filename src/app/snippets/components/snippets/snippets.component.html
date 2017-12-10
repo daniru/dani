@@ -1,10 +1,10 @@
 <section class="container">
-  <h1 class="mat-title">
+  <div class="mat-title">
     Maybe I have bad memory but how many times you search more than once the same piece of code? 
     This section contains a random selection of code snippets that I've joined because I have search them a few times. 
     Hopefully they can be helpfull for someone else.
-  </h1>
-  <div class="row">
+  </div>
+  <div class="head">
     <dr-search-box placeholder="Search Snippet" (textChanged)="onChangeFilter($event)"></dr-search-box>
     <dr-add-snippet *ngIf="authService.user.isAdmin" [snippet]="snippetToEdit" (finished)="finishEdit($event)"></dr-add-snippet>
   </div>
@@ -16,7 +16,7 @@
     <section class="languages">
       <mat-list dense>
         <mat-list-item class="item" *ngFor="let item of languages | async" (click)="selectLanguage(item)" [class.selected]="language == item">
-          <div class="name">{{item}}</div>
+          <div class="text"><div class="inner">{{item}}</div></div>
         </mat-list-item>
       </mat-list>
     </section>

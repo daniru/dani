@@ -1,5 +1,12 @@
-<dr-header></dr-header>
-<!-- 
-    #
- -->
-<router-outlet></router-outlet>
+<dr-header (openNav)="sidenav.toggle()" [opened]="sidenav.opened"></dr-header>
+<mat-sidenav-container class="sidenav-container">  
+    <mat-sidenav mode="over" position="end" #sidenav class="sidenav">
+        <dr-menu></dr-menu>
+    </mat-sidenav>
+    <dr-sub-header></dr-sub-header>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
+    
+
+
+    

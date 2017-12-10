@@ -1,19 +1,17 @@
-.page {
-    display: flex;
+@import '../styles/_colors';
+@import '../styles/_mixins.scss';
+
+.sidenav-container {
+    background: transparent;
     min-height: calc(100% - 64px);
-    .content {
-        flex: 80;
-        position: relative;
-    }
-    .column {
-        // background-color: #c1ccda;
-        // box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
-        color: #0f2540;
-        min-width: 250px;
-        padding: 0 0 0 10px;
-    }
 }
 
-router-outlet {
-    background: red;
+.sidenav {
+    margin-top: 1px;
+    padding: 10px;
+    background: $level2;
+    // background: -moz-linear-gradient(left, $level3 0%, $level2 100%);
+    // background: -webkit-linear-gradient(left, $level3 0%, $level2 100%);
+    // background: linear-gradient(to right, $level3 0%, $level2 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = $level3, endColorstr = $level2, GradientType = 1 );
 }

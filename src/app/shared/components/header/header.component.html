@@ -12,18 +12,20 @@
     <dr-auth></dr-auth>
   </div> 
 </mat-toolbar>-->
+
 <mat-toolbar color="primary">
-    <div class="logo">
-      <div class="name">Daniel Rubio</div>
-      <div class="role">Full Stack Developer</div>
+  <div class="logo">
+    <div class="name">Daniel Rubio</div>
+    <div class="role">Full Stack Developer</div>
+  </div>
+  <div class="spacer"></div>
+  <!-- <button type="button" class="menubutton" mat-button "><i class="material-icons">menu</i></button> -->
+  <div class="button-extend" [class.extend]="opened" (click)="openSideNav()">
+    <div class="container-button-extend">
+      <span class="line-top"></span>
+      <span class="line-mid"></span>
+      <span class="line-bottom"></span>
     </div>
-    <div class="spacer"></div>
-    <!-- <div class="buttons" [@buttonsState]="mode">
-      <button mat-button [routerLink]="['/']">Home</button>
-      <button mat-button [routerLink]="['/blog']">Blog</button>
-      <button mat-button [routerLink]="['/demos']">Demos</button>
-      <button mat-button [routerLink]="['/snippets']">Code Snippets</button>
-      <dr-auth></dr-auth>
-    </div> -->
-  </mat-toolbar>
-  
+  </div>
+</mat-toolbar>
+

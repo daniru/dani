@@ -8,6 +8,12 @@
   <h2> Articles </h2>
   <mat-spinner *ngIf="loading">Loading articles from Firebase</mat-spinner>
   <mat-list>
-    <mat-list-item class="item" *ngFor="let item of list | async" [routerLink]="item.key">{{item.title}}</mat-list-item>
+    <mat-list-item class="item" *ngFor="let item of list | async" [routerLink]="item.key">
+      <div class="text">
+        <div class="inner">
+          {{item.title}}
+        </div>
+      </div>
+    </mat-list-item>
   </mat-list>
 </section>

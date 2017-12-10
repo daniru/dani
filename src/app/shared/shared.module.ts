@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 import { HttpModule} from '@angular/http';
-import { MatToolbarModule, MatButtonModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatInputModule, MatSnackBarModule, MatDialogModule, MatSidenavModule } from '@angular/material';
 
 import { HeaderComponent } from './components/header/header.component';
 import { ColumnComponent } from './components/column/column.component';
@@ -17,6 +17,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { AuthComponent } from './components/auth/auth.component';
 import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
 import { OrderByOrderPipe } from './pipes/order-by-order.pipe';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   imports: [
@@ -29,12 +30,14 @@ import { OrderByOrderPipe } from './pipes/order-by-order.pipe';
     // AgmCoreModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatSidenavModule
   ],
   declarations: [ HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
-    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe ],
+    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe, MenuComponent ],
   exports: [ HeaderComponent, ColumnComponent, GmapsComponent, SubHeaderComponent, PrettyfilePipe, MarkdownPipe,
-    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe ],
+    ClipboardDirective, SearchBoxComponent, AuthComponent, AuthDialogComponent, OrderByOrderPipe, MenuComponent ],
   entryComponents: [ AuthDialogComponent ]
 })
 export class SharedModule { }

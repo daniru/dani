@@ -4,10 +4,11 @@ mat-toolbar.mat-toolbar {
   display: flex;
   margin: 1px 0 1px 0;
   background: $level4;
-  background: -moz-linear-gradient(left, $level4 0%, $level6 100%);
-  background: -webkit-linear-gradient(left, $level4 0%, $level6 100%);
-  background: linear-gradient(to right, $level4 0%, $level6 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = $level4, endColorstr = $level6, GradientType = 1 );
+  background: -moz-linear-gradient(bottom, $level4 0%, $level6 100%);
+  background: -webkit-linear-gradient(bottom, $level4 0%, $level6 100%);
+  background: linear-gradient(to bottom, $level4 0%, $level6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = $level4, endColorstr = $level6, GradientType = 1
+   );
   font-size: .9em;
   min-height: auto;
   height: 48px;

@@ -1,8 +1,8 @@
-<section class="content">
-  <h1 class="mat-title">
+<section class="container">
+  <div class="mat-title">
     This demo is a small angular application that retrieve data from a public api. In this case, we use the <a href="https://api.tfl.gov.uk/">Transport for London API</a> to
     get the current status of the line, and a search by line to retrieve stops and routes.
-  </h1>
+  </div>
   <mat-list>
     <mat-list-item class="item" *ngFor="let item of list" [routerLink]="item.link">
       <div class="text"><div class="inner">{{item.text}}</div></div>

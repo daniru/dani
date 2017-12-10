@@ -1,16 +1,5 @@
 @import '../../../../styles/_colors.scss';
-
-@mixin linear-gradient($direction, $color-stops...) {
-  // Direction has been omitted and happens to be a color-stop
-  @if is-direction($direction) == false {
-    $color-stops: $direction, $color-stops;
-    $direction: 180deg;
-  }
-
-  background: nth(nth($color-stops, 1), 1);
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-  background: linear-gradient($direction, $color-stops);
-}
+@import '../../../../styles/_mixins.scss';
 
 mat-toolbar.mat-toolbar {
   background: $level0;
@@ -35,13 +24,15 @@ mat-toolbar.mat-toolbar {
     display: flex;
     // flex-direction: column;
     flex-direction: row;
+    position: relative;
+
 
     .name {
       font-size: 1.5em;
     }
 
     .role {
-      padding-left: 10px;
+      padding: 3% 0 0 10px;
       font-size: 0.5em;
     }
 
@@ -51,8 +42,74 @@ mat-toolbar.mat-toolbar {
     flex: 1 1 auto;
   }
 
-  .buttons {
-    display:  flex;
+  .button-extend {
+    display: block;
+    width: 60px;
+    float: left;
+    position: relative;
+    height: 100%;
+
+    .container-button-extend
+    {
+      margin: 0 auto;
+      cursor: pointer;
+      width: 22px;
+      height: 100%;
+      padding-top: 24px;
+
+      & > span
+      {
+        border-bottom: 2px solid #FFFFFF;
+        display: block;
+        overflow: hidden;
+        margin-bottom: 5px;
+        position: relative;
+        top: 0;
+        transition: top, 300ms ease-in-out, transform 300ms ease-in-out;
+        width: 100%;
+      }
+
+      .line-mid { margin: 0 auto 5px auto; transform: rotate3d(1, 1, 1, 0deg); }
+      .container-button-extend .line-top { transform: rotate(0deg); }
+      .line-bottom { transform: rotate(0deg); }
+    
+      &:hover {
+        .line-top { top: -2px; }
+        .line-bottom { top: 2px;}
+      }
+    }
+
+    &.extend {
+    
+      .container-button-extend {
+        .line-mid { transform: rotate3d(1, 1, 1, 600deg); }
+        .line-top { transform: translateY(7px) rotate(45deg); }
+        .line-bottom { transform: translateY(-7px) rotate(-45deg); }
+        &:hover {
+          .line-top, 
+          .line-bottom { top: 0; }
+        }
+      }
+    }
   }
 
 }
+
+.menubutton {
+  // display: none;
+  min-width: 40px;
+}
+
+@media(max-width: 720px) {
+  .menubutton {
+    display: flex;
+  }
+  mat-toolbar.mat-toolbar .button-extend .container-button-extend { padding-top: 19px; }
+}
+
+.sidenav {
+  background: $level4;
+}
+
+
+

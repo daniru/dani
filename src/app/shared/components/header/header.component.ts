@@ -1,6 +1,8 @@
 import { NavigationEnd, Router, Event } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+// import { Output } from '@angular/core/src/metadata/directives';
+// import { EventEmitter } from '@angular/core/src/event_emitter';
 
 @Component({
   selector: 'dr-header',
@@ -92,6 +94,9 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() public opened: boolean;
+  @Output() openNav = new EventEmitter();
+
   mode: string;
 
   constructor(private _router: Router) {
@@ -104,6 +109,10 @@ export class HeaderComponent implements OnInit {
         this.mode = event.url === '/' ? 'big' : 'small';
       }
     });
+  }
+
+  openSideNav() {
+    this.openNav.emit();
   }
 
 }
